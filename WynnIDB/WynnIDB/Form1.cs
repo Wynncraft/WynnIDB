@@ -20,6 +20,7 @@ namespace WynnIDB
             InitializeComponent();
             click();
             itemClass.SelectedIndex = 0;
+            pictureBox2.Visible = false; em.Visible = false; pictureBox1.Visible = false; ebl.Visible = false; pictureBox3.Visible = false; lel.Visible = false;
         }
         DataTable dt = new DataTable();
         string bClass = String.Empty;
@@ -121,8 +122,17 @@ namespace WynnIDB
                 string a = row[1].ToString();
                 if (a == itemNames.SelectedItem.ToString())
                 {
+                    if (custE.Text == "0" || custE.Text == "") { pictureBox2.Visible = false; }
+                    else { pictureBox2.Visible = true; em.Text = custE.Text; }
+                    if (custEB.Text == "0" || custEB.Text == "") { pictureBox1.Visible = false; }
+                    else { pictureBox1.Visible = true; ebl.Text = custE.Text; }
+                    if (custLE.Text == "0" || custLE.Text == "") { pictureBox3.Visible = false; }
+                    else { pictureBox3.Visible = true; lel.Text = custE.Text; }
+                    namePic.Text = row[1].ToString();
+                    if (row[1].ToString() == "Purified Helmet of the Legends") { namePic.Text = "Helmet of the Legends"; }
                     nameTxt.Text = row[1].ToString();
                     minLvlTxt.Text = row[2].ToString();
+                    lvlPic.Text = "Min. Lvl: " + row[2].ToString();
                     tierTxt.Text = row[5].ToString();
                     idTxt.Text = row[0].ToString();
                     if (row[7].ToString() != "0") { healthRgnTxt.Text = "+ " + row[7].ToString(); } else { healthRgnTxt.Text = "None"; } 
@@ -164,16 +174,17 @@ namespace WynnIDB
                     }
                     if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
                     {
-                        defTxt.Text = "-";
-                        pieceTxt.Text = "-";
-                        minDmgTxt.Text = row[3].ToString() + " (Shp. I: " + (Int16.Parse(row[3].ToString()) * 1.1) + ", Shp. II: "  + (Int16.Parse(row[3].ToString()) * 1.15) + ")";
-                        maxDmgTxt.Text = row[4].ToString() + " (Shp. I: " + (Int16.Parse(row[4].ToString()) * 1.1) + ", Shp. II: " + (Int16.Parse(row[4].ToString()) * 1.15) + ")";
+                        statPic.Text = "Dmg: " + row[3].ToString() + " - " + row[4].ToString();
+                        defTxt.ForeColor = System.Drawing.Color.Indigo; defTxt.Text = "-";
+                        pieceTxt.ForeColor = System.Drawing.Color.Indigo; pieceTxt.Text = "-";
+                        minDmgTxt.Text = row[3].ToString() + " (Shp. I: " + (Int16.Parse(row[3].ToString()) * 1.1) + ", Shp. II: " + (Int16.Parse(row[3].ToString()) * 1.15) + ")"; minDmgTxt.ForeColor = System.Drawing.Color.Teal;
+                        maxDmgTxt.Text = row[4].ToString() + " (Shp. I: " + (Int16.Parse(row[4].ToString()) * 1.1) + ", Shp. II: " + (Int16.Parse(row[4].ToString()) * 1.15) + ")"; maxDmgTxt.ForeColor = System.Drawing.Color.Teal;
                         double min = Int16.Parse(row[3].ToString());
                         double max = Int16.Parse(row[4].ToString());
                         List<double> avgl = new List<double> { min, max };
                         List<double> avgl1 = new List<double> { (min * 1.1), (max * 1.1) };
                         List<double> avgl2 = new List<double> { (min * 1.15), (max * 1.15) };
-                        avgDmgTxt.Text = avgl.Average().ToString() + " (Shp. I: " + avgl1.Average().ToString() + ", Shp. II: " + avgl2.Average().ToString() + ")";
+                        avgDmgTxt.Text = avgl.Average().ToString() + " (Shp. I: " + avgl1.Average().ToString() + ", Shp. II: " + avgl2.Average().ToString() + ")"; avgDmgTxt.ForeColor = System.Drawing.Color.Teal;
                         switch (sheetName)
                         {
                             case "Spears": clsTxt.Text = "Warrior"; break;
@@ -184,14 +195,12 @@ namespace WynnIDB
                     }
                     else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
                     {
-                        minDmgTxt.Clear();
-                        maxDmgTxt.Clear();
-                        avgDmgTxt.Clear();
-                        minDmgTxt.Text = "-";
-                        maxDmgTxt.Text = "-";
-                        avgDmgTxt.Text = "-";
-                        defTxt.Text = row[3].ToString();
-                        pieceTxt.Text = row[4].ToString();
+                        statPic.Text = "Def: " + row[3].ToString();
+                        minDmgTxt.Text = "-"; minDmgTxt.ForeColor = System.Drawing.Color.Indigo;
+                        maxDmgTxt.Text = "-"; maxDmgTxt.ForeColor = System.Drawing.Color.Indigo;
+                        avgDmgTxt.Text = "-"; avgDmgTxt.ForeColor = System.Drawing.Color.Indigo;
+                        defTxt.Text = row[3].ToString(); defTxt.ForeColor = System.Drawing.Color.Teal;
+                        pieceTxt.Text = row[4].ToString(); pieceTxt.ForeColor = System.Drawing.Color.Teal;
                         switch (sheetName)
                         {
                             case "ArmourLeather": clsTxt.Text = "Leather"; break;
@@ -350,6 +359,32 @@ namespace WynnIDB
             try
             { itemNames.SelectedIndex = 0; }
             catch { }
+        }
+        #endregion
+        #region customCost
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int cc = 0;
+            if (custE.Text == "") { em.Text = ""; }
+            cc = 0; Int32.TryParse(custE.Text, out cc);
+            if (cc == 0) { custE.Text = ""; pictureBox2.Visible = false; }
+            else { em.Visible = true; pictureBox2.Visible = true;  em.Text = custE.Text; }
+        }
+        private void custEB_TextChanged(object sender, EventArgs e)
+        {
+            int cc2 = 0;
+            if (custEB.Text == "") { ebl.Text = ""; }
+            cc2 = 0; Int32.TryParse(custEB.Text, out cc2);
+            if (cc2 == 0) { custEB.Text = ""; pictureBox1.Visible = false; }
+            else { ebl.Visible = true; pictureBox1.Visible = true; ebl.Text = custEB.Text; }
+        }
+        private void custLE_TextChanged(object sender, EventArgs e)
+        {
+            int cc3 = 0;
+            if (custLE.Text == "") { lel.Text = ""; }
+            cc3 = 0; Int32.TryParse(custLE.Text, out cc3);
+            if (cc3 == 0) { custLE.Text = ""; pictureBox3.Visible = false; }
+            else { lel.Visible = true; pictureBox3.Visible = true; lel.Text = custLE.Text; }
         }
         #endregion
     }
