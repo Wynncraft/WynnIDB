@@ -25,6 +25,7 @@ namespace WynnIDB
         DataTable dt = new DataTable();
         string bClass = String.Empty;
         string sheetName = String.Empty;
+        bool mccolors = false;
         #endregion
         #region itemNames
         private void itemNames_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,8 +120,7 @@ namespace WynnIDB
         {
             foreach (DataRow row in dt.Rows)
             {
-                string a = row[1].ToString();
-                if (a == itemNames.SelectedItem.ToString())
+                if (row[1].ToString() == itemNames.SelectedItem.ToString())
                 {
                     if (custE.Text == "0" || custE.Text == "") { pictureBox2.Visible = false; }
                     else { pictureBox2.Visible = true; em.Text = custE.Text; }
@@ -212,6 +212,15 @@ namespace WynnIDB
                             case "ArmourQuest": clsTxt.Text = "Quest"; break;
                         }
                     }
+                    if (mccolors) 
+                    {
+                        if (row[5].ToString() == "Basic") { namePic.ForeColor = System.Drawing.Color.White; }
+                        else if (row[5].ToString() == "Unique") { namePic.ForeColor = System.Drawing.Color.Yellow; }
+                        else if (row[5].ToString() == "Rare") { namePic.ForeColor = System.Drawing.Color.Magenta; }
+                        else if (row[5].ToString() == "Legendary") { namePic.ForeColor = System.Drawing.Color.DeepSkyBlue; }
+                        else if (row[5].ToString() == "Special") { namePic.ForeColor = System.Drawing.Color.White; }
+                        else if (row[5].ToString() == "Quest") { namePic.ForeColor = System.Drawing.Color.White; }
+                    }
                 }
             }
         }
@@ -282,6 +291,13 @@ namespace WynnIDB
             RareB.Click += RareB_Click;
             LegendaryB.Click += LegendaryB_Click;
             AllB.Click += AllB_Click;
+            healthRgnTxt.TextChanged += healthRgnTxt_TextChanged;
+            manaRgnTxt.TextChanged += manaRgnTxt_TextChanged;
+            lifeStlTxt.TextChanged += lifeStlTxt_TextChanged;
+            manaStlTxt.TextChanged += manaStlTxt_TextChanged;
+            xpBnsTxt.TextChanged += xpBnsTxt_TextChanged;
+            lootBnsTxt.TextChanged += lootBnsTxt_TextChanged;
+            spellDmgTxt.TextChanged += spellDmgTxt_TextChanged;
         }
         #endregion
         #region RadioButtons
@@ -385,6 +401,92 @@ namespace WynnIDB
             cc3 = 0; Int32.TryParse(custLE.Text, out cc3);
             if (cc3 == 0) { custLE.Text = ""; pictureBox3.Visible = false; }
             else { lel.Visible = true; pictureBox3.Visible = true; lel.Text = custLE.Text; }
+        }
+        #endregion
+        #region Colors
+        private void idbColors_CheckedChanged(object sender, EventArgs e)
+        {
+            mccolors = false;
+            mColors.Checked = false;
+            namePic.ForeColor = System.Drawing.Color.FromArgb(255, 128, 0);
+            statPic.ForeColor = System.Drawing.Color.Teal;
+            lvlPic.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            HR.ForeColor = System.Drawing.Color.Indigo; MR.ForeColor = System.Drawing.Color.Indigo; LS.ForeColor = System.Drawing.Color.Indigo;
+            MS.ForeColor = System.Drawing.Color.Indigo; XB.ForeColor = System.Drawing.Color.Indigo; LB.ForeColor = System.Drawing.Color.Indigo;
+            SD.ForeColor = System.Drawing.Color.Indigo;
+        }
+        private void mColors_CheckedChanged(object sender, EventArgs e)
+        {
+            mccolors = true;
+            idbColors.Checked = false;
+            statPic.ForeColor = System.Drawing.Color.Purple;
+            lvlPic.ForeColor = System.Drawing.Color.Gold;
+            HR.ForeColor = System.Drawing.Color.LightGray; MR.ForeColor = System.Drawing.Color.LightGray; LS.ForeColor = System.Drawing.Color.LightGray;
+            MS.ForeColor = System.Drawing.Color.LightGray; XB.ForeColor = System.Drawing.Color.LightGray; LB.ForeColor = System.Drawing.Color.LightGray;
+            SD.ForeColor = System.Drawing.Color.LightGray;
+        }
+        #endregion
+        #region getIDS + IDC
+        public void getIDS()
+        {
+            string a = ""; string b = ""; string c = ""; string d = ""; string e = ""; string f = ""; string g = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[1].ToString() == itemNames.SelectedItem.ToString()) 
+                {
+                    a = row[7].ToString(); b = row[8].ToString(); c = row[9].ToString(); d = row[10].ToString();
+                    e = row[11].ToString(); f = row[12].ToString(); g = row[13].ToString();
+                }
+            }
+            try { Decimal.Parse(healthRgnTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (a != "0") { healthRgnTxt.Text = a; } else { healthRgnTxt.Text = "None"; } }
+            try { Int16.Parse(manaRgnTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (b != "0") { manaRgnTxt.Text = b; } else { manaRgnTxt.Text = "None"; } }
+            try { Int16.Parse(spellDmgTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (c != "0") { spellDmgTxt.Text = c; } else { spellDmgTxt.Text = "None"; } }
+            try { Decimal.Parse(lifeStlTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (d != "0") { lifeStlTxt.Text = d; } else { lifeStlTxt.Text = "None"; } }
+            try { Int16.Parse(manaStlTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (e != "0") { manaStlTxt.Text = e; } else { manaStlTxt.Text = "None"; } }
+            try { Int16.Parse(xpBnsTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (f != "0") { xpBnsTxt.Text = f; } else { xpBnsTxt.Text = "None"; } }
+            try { Int16.Parse(lootBnsTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
+            catch { if (g != "0") { lootBnsTxt.Text = g; } else { lootBnsTxt.Text = "None"; } }
+            if (healthRgnTxt.Text != "None") { HR.Text = "Health Rgn: " + healthRgnTxt.Text; HR.Visible = true; } else { HR.Text = ""; HR.Visible = false; }
+            if (manaRgnTxt.Text != "None") { MR.Text = "Mana Rgn: " + manaRgnTxt.Text; MR.Visible = true; } else { MR.Text = ""; MR.Visible = false; }
+            if (spellDmgTxt.Text != "None") { SD.Text = "Spell Dmg: " + spellDmgTxt.Text; SD.Visible = true; } else { SD.Text = ""; SD.Visible = false; }
+            if (lifeStlTxt.Text != "None") { LS.Text = "Life Stl: " + lifeStlTxt.Text; LS.Visible = true; } else { LS.Text = ""; LS.Visible = false; }
+            if (manaStlTxt.Text != "None") { MS.Text = "Mana Stl: " + manaStlTxt.Text; MS.Visible = true; } else { MS.Text = ""; MS.Visible = false; }
+            if (xpBnsTxt.Text != "None") { XB.Text = "XP Bns: " + xpBnsTxt.Text; XB.Visible = true; } else { XB.Text = ""; XB.Visible = false; }
+            if (lootBnsTxt.Text != "None") { LB.Text = "Loot Bns: " + lootBnsTxt.Text; LB.Visible = true; } else { LB.Text = ""; LB.Visible = false; }
+        }
+        private void healthRgnTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void manaRgnTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void lifeStlTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void manaStlTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void xpBnsTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void lootBnsTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
+        }
+        private void spellDmgTxt_TextChanged(object sender, EventArgs e)
+        {
+            getIDS();
         }
         #endregion
     }
