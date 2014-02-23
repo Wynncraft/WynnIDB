@@ -79,19 +79,17 @@
             this.statPic = new System.Windows.Forms.Label();
             this.lvlPic = new System.Windows.Forms.Label();
             this.custE = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.eblI = new System.Windows.Forms.PictureBox();
             this.ebl = new System.Windows.Forms.Label();
             this.E = new System.Windows.Forms.Label();
             this.EB = new System.Windows.Forms.Label();
             this.custEB = new System.Windows.Forms.TextBox();
             this.LE = new System.Windows.Forms.Label();
             this.custLE = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.em = new System.Windows.Forms.Label();
+            this.emlI = new System.Windows.Forms.PictureBox();
+            this.lelI = new System.Windows.Forms.PictureBox();
+            this.eml = new System.Windows.Forms.Label();
             this.lel = new System.Windows.Forms.Label();
-            this.idbColors = new System.Windows.Forms.CheckBox();
-            this.mColors = new System.Windows.Forms.CheckBox();
             this.HR = new System.Windows.Forms.Label();
             this.MR = new System.Windows.Forms.Label();
             this.LS = new System.Windows.Forms.Label();
@@ -99,6 +97,44 @@
             this.XB = new System.Windows.Forms.Label();
             this.LB = new System.Windows.Forms.Label();
             this.SD = new System.Windows.Forms.Label();
+            this.powder = new System.Windows.Forms.ComboBox();
+            this.P = new System.Windows.Forms.Label();
+            this.minmax1 = new System.Windows.Forms.PictureBox();
+            this.minmaxXP = new System.Windows.Forms.TextBox();
+            this.minmax2 = new System.Windows.Forms.PictureBox();
+            this.minmax3 = new System.Windows.Forms.PictureBox();
+            this.minmaxSpell = new System.Windows.Forms.TextBox();
+            this.minmaxLoot = new System.Windows.Forms.TextBox();
+            this.imgSelect = new System.Windows.Forms.ComboBox();
+            this.P_2 = new System.Windows.Forms.Label();
+            this.powder_2 = new System.Windows.Forms.ComboBox();
+            this.SD_2 = new System.Windows.Forms.Label();
+            this.LB_2 = new System.Windows.Forms.Label();
+            this.XB_2 = new System.Windows.Forms.Label();
+            this.MS_2 = new System.Windows.Forms.Label();
+            this.LS_2 = new System.Windows.Forms.Label();
+            this.MR_2 = new System.Windows.Forms.Label();
+            this.HR_2 = new System.Windows.Forms.Label();
+            this.lel_2 = new System.Windows.Forms.Label();
+            this.eml_2 = new System.Windows.Forms.Label();
+            this.lelI_2 = new System.Windows.Forms.PictureBox();
+            this.emlI_2 = new System.Windows.Forms.PictureBox();
+            this.LE_2 = new System.Windows.Forms.Label();
+            this.custLE_2 = new System.Windows.Forms.TextBox();
+            this.EB_2 = new System.Windows.Forms.Label();
+            this.custEB_2 = new System.Windows.Forms.TextBox();
+            this.E_2 = new System.Windows.Forms.Label();
+            this.ebl_2 = new System.Windows.Forms.Label();
+            this.eblI_2 = new System.Windows.Forms.PictureBox();
+            this.custE_2 = new System.Windows.Forms.TextBox();
+            this.lvlPic_2 = new System.Windows.Forms.Label();
+            this.statPic_2 = new System.Windows.Forms.Label();
+            this.namePic_2 = new System.Windows.Forms.Label();
+            this.img_2 = new System.Windows.Forms.PictureBox();
+            this.itemPic_2 = new System.Windows.Forms.PictureBox();
+            this.colors = new System.Windows.Forms.ComboBox();
+            this.imgClass = new System.Windows.Forms.Label();
+            this.imgClass_2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.minDmg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxDmg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.def)).BeginInit();
@@ -119,9 +155,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.xpBns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lootBns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eblI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emlI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lelI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lelI_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emlI_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eblI_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemPic_2)).BeginInit();
             this.SuspendLayout();
             // 
             // itemClass
@@ -441,7 +485,7 @@
             this.img.BackColor = System.Drawing.Color.Gray;
             this.img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("img.BackgroundImage")));
             this.img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.img.Location = new System.Drawing.Point(529, 119);
+            this.img.Location = new System.Drawing.Point(833, 190);
             this.img.Name = "img";
             this.img.Size = new System.Drawing.Size(32, 32);
             this.img.TabIndex = 57;
@@ -468,7 +512,7 @@
             // healthRgn
             // 
             this.healthRgn.Image = ((System.Drawing.Image)(resources.GetObject("healthRgn.Image")));
-            this.healthRgn.Location = new System.Drawing.Point(512, 314);
+            this.healthRgn.Location = new System.Drawing.Point(512, 55);
             this.healthRgn.Name = "healthRgn";
             this.healthRgn.Size = new System.Drawing.Size(116, 31);
             this.healthRgn.TabIndex = 64;
@@ -477,7 +521,7 @@
             // manaRgn
             // 
             this.manaRgn.Image = ((System.Drawing.Image)(resources.GetObject("manaRgn.Image")));
-            this.manaRgn.Location = new System.Drawing.Point(701, 314);
+            this.manaRgn.Location = new System.Drawing.Point(512, 129);
             this.manaRgn.Name = "manaRgn";
             this.manaRgn.Size = new System.Drawing.Size(116, 31);
             this.manaRgn.TabIndex = 65;
@@ -486,7 +530,7 @@
             // spellDmg
             // 
             this.spellDmg.Image = ((System.Drawing.Image)(resources.GetObject("spellDmg.Image")));
-            this.spellDmg.Location = new System.Drawing.Point(512, 426);
+            this.spellDmg.Location = new System.Drawing.Point(512, 240);
             this.spellDmg.Name = "spellDmg";
             this.spellDmg.Size = new System.Drawing.Size(116, 31);
             this.spellDmg.TabIndex = 66;
@@ -495,7 +539,7 @@
             // lifeStl
             // 
             this.lifeStl.Image = ((System.Drawing.Image)(resources.GetObject("lifeStl.Image")));
-            this.lifeStl.Location = new System.Drawing.Point(512, 351);
+            this.lifeStl.Location = new System.Drawing.Point(512, 92);
             this.lifeStl.Name = "lifeStl";
             this.lifeStl.Size = new System.Drawing.Size(116, 31);
             this.lifeStl.TabIndex = 67;
@@ -504,7 +548,7 @@
             // manaStl
             // 
             this.manaStl.Image = ((System.Drawing.Image)(resources.GetObject("manaStl.Image")));
-            this.manaStl.Location = new System.Drawing.Point(701, 351);
+            this.manaStl.Location = new System.Drawing.Point(512, 166);
             this.manaStl.Name = "manaStl";
             this.manaStl.Size = new System.Drawing.Size(116, 31);
             this.manaStl.TabIndex = 68;
@@ -513,7 +557,7 @@
             // xpBns
             // 
             this.xpBns.Image = ((System.Drawing.Image)(resources.GetObject("xpBns.Image")));
-            this.xpBns.Location = new System.Drawing.Point(512, 388);
+            this.xpBns.Location = new System.Drawing.Point(512, 202);
             this.xpBns.Name = "xpBns";
             this.xpBns.Size = new System.Drawing.Size(116, 31);
             this.xpBns.TabIndex = 69;
@@ -522,7 +566,7 @@
             // lootBns
             // 
             this.lootBns.Image = ((System.Drawing.Image)(resources.GetObject("lootBns.Image")));
-            this.lootBns.Location = new System.Drawing.Point(701, 389);
+            this.lootBns.Location = new System.Drawing.Point(512, 277);
             this.lootBns.Name = "lootBns";
             this.lootBns.Size = new System.Drawing.Size(116, 31);
             this.lootBns.TabIndex = 70;
@@ -561,7 +605,7 @@
             this.healthRgnTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.healthRgnTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.healthRgnTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.healthRgnTxt.Location = new System.Drawing.Point(634, 322);
+            this.healthRgnTxt.Location = new System.Drawing.Point(634, 63);
             this.healthRgnTxt.MaxLength = 8;
             this.healthRgnTxt.Name = "healthRgnTxt";
             this.healthRgnTxt.Size = new System.Drawing.Size(61, 15);
@@ -574,7 +618,7 @@
             this.manaRgnTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.manaRgnTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.manaRgnTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.manaRgnTxt.Location = new System.Drawing.Point(823, 322);
+            this.manaRgnTxt.Location = new System.Drawing.Point(634, 137);
             this.manaRgnTxt.MaxLength = 8;
             this.manaRgnTxt.Name = "manaRgnTxt";
             this.manaRgnTxt.Size = new System.Drawing.Size(61, 15);
@@ -587,7 +631,7 @@
             this.spellDmgTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.spellDmgTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.spellDmgTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.spellDmgTxt.Location = new System.Drawing.Point(634, 435);
+            this.spellDmgTxt.Location = new System.Drawing.Point(634, 249);
             this.spellDmgTxt.MaxLength = 8;
             this.spellDmgTxt.Name = "spellDmgTxt";
             this.spellDmgTxt.Size = new System.Drawing.Size(61, 15);
@@ -600,7 +644,7 @@
             this.lifeStlTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.lifeStlTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.lifeStlTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.lifeStlTxt.Location = new System.Drawing.Point(634, 360);
+            this.lifeStlTxt.Location = new System.Drawing.Point(634, 101);
             this.lifeStlTxt.MaxLength = 8;
             this.lifeStlTxt.Name = "lifeStlTxt";
             this.lifeStlTxt.Size = new System.Drawing.Size(61, 15);
@@ -613,7 +657,7 @@
             this.manaStlTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.manaStlTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.manaStlTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.manaStlTxt.Location = new System.Drawing.Point(823, 360);
+            this.manaStlTxt.Location = new System.Drawing.Point(634, 175);
             this.manaStlTxt.MaxLength = 8;
             this.manaStlTxt.Name = "manaStlTxt";
             this.manaStlTxt.Size = new System.Drawing.Size(61, 15);
@@ -626,7 +670,7 @@
             this.xpBnsTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.xpBnsTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.xpBnsTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.xpBnsTxt.Location = new System.Drawing.Point(634, 396);
+            this.xpBnsTxt.Location = new System.Drawing.Point(634, 210);
             this.xpBnsTxt.MaxLength = 8;
             this.xpBnsTxt.Name = "xpBnsTxt";
             this.xpBnsTxt.Size = new System.Drawing.Size(61, 15);
@@ -639,7 +683,7 @@
             this.lootBnsTxt.Cursor = System.Windows.Forms.Cursors.Default;
             this.lootBnsTxt.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
             this.lootBnsTxt.ForeColor = System.Drawing.Color.Indigo;
-            this.lootBnsTxt.Location = new System.Drawing.Point(823, 397);
+            this.lootBnsTxt.Location = new System.Drawing.Point(634, 285);
             this.lootBnsTxt.MaxLength = 8;
             this.lootBnsTxt.Name = "lootBnsTxt";
             this.lootBnsTxt.Size = new System.Drawing.Size(61, 15);
@@ -650,7 +694,7 @@
             this.credits.AutoSize = true;
             this.credits.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.credits.ForeColor = System.Drawing.SystemColors.Control;
-            this.credits.Location = new System.Drawing.Point(509, 9);
+            this.credits.Location = new System.Drawing.Point(509, 12);
             this.credits.Name = "credits";
             this.credits.Size = new System.Drawing.Size(302, 26);
             this.credits.TabIndex = 80;
@@ -659,7 +703,7 @@
             // itemPic
             // 
             this.itemPic.Image = ((System.Drawing.Image)(resources.GetObject("itemPic.Image")));
-            this.itemPic.Location = new System.Drawing.Point(512, 48);
+            this.itemPic.Location = new System.Drawing.Point(816, 119);
             this.itemPic.Name = "itemPic";
             this.itemPic.Size = new System.Drawing.Size(384, 121);
             this.itemPic.TabIndex = 81;
@@ -671,7 +715,7 @@
             this.namePic.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
             this.namePic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.namePic.Image = ((System.Drawing.Image)(resources.GetObject("namePic.Image")));
-            this.namePic.Location = new System.Drawing.Point(526, 57);
+            this.namePic.Location = new System.Drawing.Point(830, 128);
             this.namePic.Name = "namePic";
             this.namePic.Size = new System.Drawing.Size(78, 16);
             this.namePic.TabIndex = 82;
@@ -683,7 +727,7 @@
             this.statPic.Font = new System.Drawing.Font("Minecraft", 11F);
             this.statPic.ForeColor = System.Drawing.Color.Teal;
             this.statPic.Image = ((System.Drawing.Image)(resources.GetObject("statPic.Image")));
-            this.statPic.Location = new System.Drawing.Point(526, 86);
+            this.statPic.Location = new System.Drawing.Point(830, 157);
             this.statPic.Name = "statPic";
             this.statPic.Size = new System.Drawing.Size(98, 15);
             this.statPic.TabIndex = 83;
@@ -695,7 +739,7 @@
             this.lvlPic.Font = new System.Drawing.Font("Minecraft", 11F);
             this.lvlPic.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lvlPic.Image = ((System.Drawing.Image)(resources.GetObject("lvlPic.Image")));
-            this.lvlPic.Location = new System.Drawing.Point(686, 86);
+            this.lvlPic.Location = new System.Drawing.Point(990, 157);
             this.lvlPic.Name = "lvlPic";
             this.lvlPic.Size = new System.Drawing.Size(73, 15);
             this.lvlPic.TabIndex = 84;
@@ -707,7 +751,7 @@
             this.custE.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.custE.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custE.ForeColor = System.Drawing.Color.White;
-            this.custE.Location = new System.Drawing.Point(512, 187);
+            this.custE.Location = new System.Drawing.Point(816, 71);
             this.custE.MaxLength = 4;
             this.custE.Name = "custE";
             this.custE.Size = new System.Drawing.Size(49, 15);
@@ -715,17 +759,17 @@
             this.custE.Text = "0";
             this.custE.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // pictureBox1
+            // eblI
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.ImageLocation = "http://i.imgur.com/fhE2FNd.png";
-            this.pictureBox1.Location = new System.Drawing.Point(866, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 86;
-            this.pictureBox1.TabStop = false;
+            this.eblI.BackColor = System.Drawing.Color.Gray;
+            this.eblI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eblI.BackgroundImage")));
+            this.eblI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eblI.ImageLocation = "http://i.imgur.com/fhE2FNd.png";
+            this.eblI.Location = new System.Drawing.Point(1170, 182);
+            this.eblI.Name = "eblI";
+            this.eblI.Size = new System.Drawing.Size(16, 16);
+            this.eblI.TabIndex = 86;
+            this.eblI.TabStop = false;
             // 
             // ebl
             // 
@@ -733,7 +777,7 @@
             this.ebl.Font = new System.Drawing.Font("Minecraft", 11F);
             this.ebl.ForeColor = System.Drawing.Color.Lime;
             this.ebl.Image = ((System.Drawing.Image)(resources.GetObject("ebl.Image")));
-            this.ebl.Location = new System.Drawing.Point(815, 111);
+            this.ebl.Location = new System.Drawing.Point(1119, 182);
             this.ebl.Name = "ebl";
             this.ebl.Size = new System.Drawing.Size(45, 15);
             this.ebl.TabIndex = 88;
@@ -745,7 +789,7 @@
             this.E.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.E.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
             this.E.ForeColor = System.Drawing.Color.White;
-            this.E.Location = new System.Drawing.Point(567, 187);
+            this.E.Location = new System.Drawing.Point(871, 71);
             this.E.Name = "E";
             this.E.Size = new System.Drawing.Size(21, 16);
             this.E.TabIndex = 89;
@@ -757,7 +801,7 @@
             this.EB.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.EB.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
             this.EB.ForeColor = System.Drawing.Color.White;
-            this.EB.Location = new System.Drawing.Point(649, 186);
+            this.EB.Location = new System.Drawing.Point(953, 70);
             this.EB.Name = "EB";
             this.EB.Size = new System.Drawing.Size(34, 16);
             this.EB.TabIndex = 91;
@@ -769,7 +813,7 @@
             this.custEB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.custEB.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custEB.ForeColor = System.Drawing.Color.White;
-            this.custEB.Location = new System.Drawing.Point(594, 187);
+            this.custEB.Location = new System.Drawing.Point(898, 71);
             this.custEB.MaxLength = 4;
             this.custEB.Name = "custEB";
             this.custEB.Size = new System.Drawing.Size(49, 15);
@@ -783,7 +827,7 @@
             this.LE.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LE.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
             this.LE.ForeColor = System.Drawing.Color.White;
-            this.LE.Location = new System.Drawing.Point(744, 186);
+            this.LE.Location = new System.Drawing.Point(1048, 70);
             this.LE.Name = "LE";
             this.LE.Size = new System.Drawing.Size(34, 16);
             this.LE.TabIndex = 93;
@@ -795,7 +839,7 @@
             this.custLE.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.custLE.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.custLE.ForeColor = System.Drawing.Color.White;
-            this.custLE.Location = new System.Drawing.Point(689, 187);
+            this.custLE.Location = new System.Drawing.Point(993, 71);
             this.custLE.MaxLength = 4;
             this.custLE.Name = "custLE";
             this.custLE.Size = new System.Drawing.Size(49, 15);
@@ -803,41 +847,41 @@
             this.custLE.Text = "0";
             this.custLE.TextChanged += new System.EventHandler(this.custLE_TextChanged);
             // 
-            // pictureBox2
+            // emlI
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.ImageLocation = "http://i.imgur.com/XmkL9AK.png";
-            this.pictureBox2.Location = new System.Drawing.Point(866, 80);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 94;
-            this.pictureBox2.TabStop = false;
+            this.emlI.BackColor = System.Drawing.Color.Gray;
+            this.emlI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("emlI.BackgroundImage")));
+            this.emlI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.emlI.ImageLocation = "http://i.imgur.com/XmkL9AK.png";
+            this.emlI.Location = new System.Drawing.Point(1170, 151);
+            this.emlI.Name = "emlI";
+            this.emlI.Size = new System.Drawing.Size(16, 16);
+            this.emlI.TabIndex = 94;
+            this.emlI.TabStop = false;
             // 
-            // pictureBox3
+            // lelI
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.ImageLocation = "http://i.imgur.com/xgpkCJH.png";
-            this.pictureBox3.Location = new System.Drawing.Point(866, 142);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.TabIndex = 95;
-            this.pictureBox3.TabStop = false;
+            this.lelI.BackColor = System.Drawing.Color.Gray;
+            this.lelI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lelI.BackgroundImage")));
+            this.lelI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lelI.ImageLocation = "http://i.imgur.com/xgpkCJH.png";
+            this.lelI.Location = new System.Drawing.Point(1170, 213);
+            this.lelI.Name = "lelI";
+            this.lelI.Size = new System.Drawing.Size(16, 16);
+            this.lelI.TabIndex = 95;
+            this.lelI.TabStop = false;
             // 
-            // em
+            // eml
             // 
-            this.em.AutoSize = true;
-            this.em.Font = new System.Drawing.Font("Minecraft", 11F);
-            this.em.ForeColor = System.Drawing.Color.Lime;
-            this.em.Image = ((System.Drawing.Image)(resources.GetObject("em.Image")));
-            this.em.Location = new System.Drawing.Point(815, 81);
-            this.em.Name = "em";
-            this.em.Size = new System.Drawing.Size(45, 15);
-            this.em.TabIndex = 96;
-            this.em.Text = "[EM]";
+            this.eml.AutoSize = true;
+            this.eml.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.eml.ForeColor = System.Drawing.Color.Lime;
+            this.eml.Image = ((System.Drawing.Image)(resources.GetObject("eml.Image")));
+            this.eml.Location = new System.Drawing.Point(1119, 152);
+            this.eml.Name = "eml";
+            this.eml.Size = new System.Drawing.Size(45, 15);
+            this.eml.TabIndex = 96;
+            this.eml.Text = "[EM]";
             // 
             // lel
             // 
@@ -845,37 +889,11 @@
             this.lel.Font = new System.Drawing.Font("Minecraft", 11F);
             this.lel.ForeColor = System.Drawing.Color.Lime;
             this.lel.Image = ((System.Drawing.Image)(resources.GetObject("lel.Image")));
-            this.lel.Location = new System.Drawing.Point(815, 142);
+            this.lel.Location = new System.Drawing.Point(1119, 213);
             this.lel.Name = "lel";
             this.lel.Size = new System.Drawing.Size(45, 15);
             this.lel.TabIndex = 97;
             this.lel.Text = "[LE]";
-            // 
-            // idbColors
-            // 
-            this.idbColors.AutoSize = true;
-            this.idbColors.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Italic);
-            this.idbColors.ForeColor = System.Drawing.SystemColors.Control;
-            this.idbColors.Location = new System.Drawing.Point(512, 219);
-            this.idbColors.Name = "idbColors";
-            this.idbColors.Size = new System.Drawing.Size(165, 19);
-            this.idbColors.TabIndex = 98;
-            this.idbColors.Text = "WynnIDB Colors";
-            this.idbColors.UseVisualStyleBackColor = true;
-            this.idbColors.CheckedChanged += new System.EventHandler(this.idbColors_CheckedChanged);
-            // 
-            // mColors
-            // 
-            this.mColors.AutoSize = true;
-            this.mColors.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Italic);
-            this.mColors.ForeColor = System.Drawing.SystemColors.Control;
-            this.mColors.Location = new System.Drawing.Point(689, 219);
-            this.mColors.Name = "mColors";
-            this.mColors.Size = new System.Drawing.Size(178, 19);
-            this.mColors.TabIndex = 99;
-            this.mColors.Text = "Minecraft Colors";
-            this.mColors.UseVisualStyleBackColor = true;
-            this.mColors.CheckedChanged += new System.EventHandler(this.mColors_CheckedChanged);
             // 
             // HR
             // 
@@ -883,7 +901,7 @@
             this.HR.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HR.ForeColor = System.Drawing.Color.Indigo;
             this.HR.Image = ((System.Drawing.Image)(resources.GetObject("HR.Image")));
-            this.HR.Location = new System.Drawing.Point(567, 109);
+            this.HR.Location = new System.Drawing.Point(871, 180);
             this.HR.Name = "HR";
             this.HR.Size = new System.Drawing.Size(25, 13);
             this.HR.TabIndex = 100;
@@ -895,7 +913,7 @@
             this.MR.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MR.ForeColor = System.Drawing.Color.Indigo;
             this.MR.Image = ((System.Drawing.Image)(resources.GetObject("MR.Image")));
-            this.MR.Location = new System.Drawing.Point(567, 122);
+            this.MR.Location = new System.Drawing.Point(871, 193);
             this.MR.Name = "MR";
             this.MR.Size = new System.Drawing.Size(25, 13);
             this.MR.TabIndex = 101;
@@ -907,7 +925,7 @@
             this.LS.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LS.ForeColor = System.Drawing.Color.Indigo;
             this.LS.Image = ((System.Drawing.Image)(resources.GetObject("LS.Image")));
-            this.LS.Location = new System.Drawing.Point(567, 135);
+            this.LS.Location = new System.Drawing.Point(871, 206);
             this.LS.Name = "LS";
             this.LS.Size = new System.Drawing.Size(25, 13);
             this.LS.TabIndex = 102;
@@ -919,7 +937,7 @@
             this.MS.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MS.ForeColor = System.Drawing.Color.Indigo;
             this.MS.Image = ((System.Drawing.Image)(resources.GetObject("MS.Image")));
-            this.MS.Location = new System.Drawing.Point(567, 148);
+            this.MS.Location = new System.Drawing.Point(871, 219);
             this.MS.Name = "MS";
             this.MS.Size = new System.Drawing.Size(25, 13);
             this.MS.TabIndex = 103;
@@ -931,7 +949,7 @@
             this.XB.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XB.ForeColor = System.Drawing.Color.Indigo;
             this.XB.Image = ((System.Drawing.Image)(resources.GetObject("XB.Image")));
-            this.XB.Location = new System.Drawing.Point(694, 109);
+            this.XB.Location = new System.Drawing.Point(998, 180);
             this.XB.Name = "XB";
             this.XB.Size = new System.Drawing.Size(25, 13);
             this.XB.TabIndex = 104;
@@ -943,7 +961,7 @@
             this.LB.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB.ForeColor = System.Drawing.Color.Indigo;
             this.LB.Image = ((System.Drawing.Image)(resources.GetObject("LB.Image")));
-            this.LB.Location = new System.Drawing.Point(694, 122);
+            this.LB.Location = new System.Drawing.Point(998, 193);
             this.LB.Name = "LB";
             this.LB.Size = new System.Drawing.Size(25, 13);
             this.LB.TabIndex = 105;
@@ -955,18 +973,522 @@
             this.SD.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SD.ForeColor = System.Drawing.Color.Indigo;
             this.SD.Image = ((System.Drawing.Image)(resources.GetObject("SD.Image")));
-            this.SD.Location = new System.Drawing.Point(694, 135);
+            this.SD.Location = new System.Drawing.Point(998, 206);
             this.SD.Name = "SD";
             this.SD.Size = new System.Drawing.Size(25, 13);
             this.SD.TabIndex = 106;
             this.SD.Text = "SD";
+            // 
+            // powder
+            // 
+            this.powder.BackColor = System.Drawing.Color.White;
+            this.powder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.powder.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powder.ForeColor = System.Drawing.Color.Black;
+            this.powder.FormattingEnabled = true;
+            this.powder.Location = new System.Drawing.Point(816, 90);
+            this.powder.Name = "powder";
+            this.powder.Size = new System.Drawing.Size(165, 23);
+            this.powder.TabIndex = 107;
+            this.powder.SelectedIndexChanged += new System.EventHandler(this.powder_SelectedIndexChanged);
+            // 
+            // P
+            // 
+            this.P.AutoSize = true;
+            this.P.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P.ForeColor = System.Drawing.Color.Indigo;
+            this.P.Image = ((System.Drawing.Image)(resources.GetObject("P.Image")));
+            this.P.Location = new System.Drawing.Point(998, 219);
+            this.P.Name = "P";
+            this.P.Size = new System.Drawing.Size(16, 13);
+            this.P.TabIndex = 108;
+            this.P.Text = "P";
+            // 
+            // minmax1
+            // 
+            this.minmax1.Image = ((System.Drawing.Image)(resources.GetObject("minmax1.Image")));
+            this.minmax1.Location = new System.Drawing.Point(512, 314);
+            this.minmax1.Name = "minmax1";
+            this.minmax1.Size = new System.Drawing.Size(116, 31);
+            this.minmax1.TabIndex = 109;
+            this.minmax1.TabStop = false;
+            // 
+            // minmaxXP
+            // 
+            this.minmaxXP.BackColor = System.Drawing.SystemColors.MenuText;
+            this.minmaxXP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.minmaxXP.Cursor = System.Windows.Forms.Cursors.Default;
+            this.minmaxXP.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
+            this.minmaxXP.ForeColor = System.Drawing.Color.Indigo;
+            this.minmaxXP.Location = new System.Drawing.Point(634, 322);
+            this.minmaxXP.MaxLength = 24;
+            this.minmaxXP.Name = "minmaxXP";
+            this.minmaxXP.ReadOnly = true;
+            this.minmaxXP.Size = new System.Drawing.Size(137, 15);
+            this.minmaxXP.TabIndex = 110;
+            // 
+            // minmax2
+            // 
+            this.minmax2.Image = ((System.Drawing.Image)(resources.GetObject("minmax2.Image")));
+            this.minmax2.Location = new System.Drawing.Point(512, 352);
+            this.minmax2.Name = "minmax2";
+            this.minmax2.Size = new System.Drawing.Size(116, 31);
+            this.minmax2.TabIndex = 111;
+            this.minmax2.TabStop = false;
+            // 
+            // minmax3
+            // 
+            this.minmax3.Image = ((System.Drawing.Image)(resources.GetObject("minmax3.Image")));
+            this.minmax3.Location = new System.Drawing.Point(512, 390);
+            this.minmax3.Name = "minmax3";
+            this.minmax3.Size = new System.Drawing.Size(116, 31);
+            this.minmax3.TabIndex = 112;
+            this.minmax3.TabStop = false;
+            // 
+            // minmaxSpell
+            // 
+            this.minmaxSpell.BackColor = System.Drawing.SystemColors.MenuText;
+            this.minmaxSpell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.minmaxSpell.Cursor = System.Windows.Forms.Cursors.Default;
+            this.minmaxSpell.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
+            this.minmaxSpell.ForeColor = System.Drawing.Color.Indigo;
+            this.minmaxSpell.Location = new System.Drawing.Point(634, 360);
+            this.minmaxSpell.MaxLength = 24;
+            this.minmaxSpell.Name = "minmaxSpell";
+            this.minmaxSpell.ReadOnly = true;
+            this.minmaxSpell.Size = new System.Drawing.Size(137, 15);
+            this.minmaxSpell.TabIndex = 113;
+            // 
+            // minmaxLoot
+            // 
+            this.minmaxLoot.BackColor = System.Drawing.SystemColors.MenuText;
+            this.minmaxLoot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.minmaxLoot.Cursor = System.Windows.Forms.Cursors.Default;
+            this.minmaxLoot.Font = new System.Drawing.Font("Minecraft", 11F, System.Drawing.FontStyle.Bold);
+            this.minmaxLoot.ForeColor = System.Drawing.Color.Indigo;
+            this.minmaxLoot.Location = new System.Drawing.Point(634, 397);
+            this.minmaxLoot.MaxLength = 24;
+            this.minmaxLoot.Name = "minmaxLoot";
+            this.minmaxLoot.ReadOnly = true;
+            this.minmaxLoot.Size = new System.Drawing.Size(137, 15);
+            this.minmaxLoot.TabIndex = 114;
+            // 
+            // imgSelect
+            // 
+            this.imgSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imgSelect.Font = new System.Drawing.Font("Minecraft", 12.5F);
+            this.imgSelect.FormattingEnabled = true;
+            this.imgSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.imgSelect.IntegralHeight = false;
+            this.imgSelect.Items.AddRange(new object[] {
+            "First ",
+            "Second"});
+            this.imgSelect.Location = new System.Drawing.Point(336, 101);
+            this.imgSelect.MaxDropDownItems = 9;
+            this.imgSelect.Name = "imgSelect";
+            this.imgSelect.Size = new System.Drawing.Size(143, 25);
+            this.imgSelect.TabIndex = 115;
+            this.imgSelect.SelectedIndexChanged += new System.EventHandler(this.imgSelect_SelectedIndexChanged);
+            // 
+            // P_2
+            // 
+            this.P_2.AutoSize = true;
+            this.P_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_2.ForeColor = System.Drawing.Color.Indigo;
+            this.P_2.Image = ((System.Drawing.Image)(resources.GetObject("P_2.Image")));
+            this.P_2.Location = new System.Drawing.Point(998, 346);
+            this.P_2.Name = "P_2";
+            this.P_2.Size = new System.Drawing.Size(16, 13);
+            this.P_2.TabIndex = 141;
+            this.P_2.Text = "P";
+            // 
+            // powder_2
+            // 
+            this.powder_2.BackColor = System.Drawing.Color.White;
+            this.powder_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.powder_2.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powder_2.ForeColor = System.Drawing.Color.Black;
+            this.powder_2.FormattingEnabled = true;
+            this.powder_2.Location = new System.Drawing.Point(816, 398);
+            this.powder_2.Name = "powder_2";
+            this.powder_2.Size = new System.Drawing.Size(165, 23);
+            this.powder_2.TabIndex = 140;
+            this.powder_2.SelectedIndexChanged += new System.EventHandler(this.powder_2_SelectedIndexChanged);
+            // 
+            // SD_2
+            // 
+            this.SD_2.AutoSize = true;
+            this.SD_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SD_2.ForeColor = System.Drawing.Color.Indigo;
+            this.SD_2.Image = ((System.Drawing.Image)(resources.GetObject("SD_2.Image")));
+            this.SD_2.Location = new System.Drawing.Point(998, 333);
+            this.SD_2.Name = "SD_2";
+            this.SD_2.Size = new System.Drawing.Size(25, 13);
+            this.SD_2.TabIndex = 139;
+            this.SD_2.Text = "SD";
+            // 
+            // LB_2
+            // 
+            this.LB_2.AutoSize = true;
+            this.LB_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_2.ForeColor = System.Drawing.Color.Indigo;
+            this.LB_2.Image = ((System.Drawing.Image)(resources.GetObject("LB_2.Image")));
+            this.LB_2.Location = new System.Drawing.Point(998, 320);
+            this.LB_2.Name = "LB_2";
+            this.LB_2.Size = new System.Drawing.Size(25, 13);
+            this.LB_2.TabIndex = 138;
+            this.LB_2.Text = "LB";
+            // 
+            // XB_2
+            // 
+            this.XB_2.AutoSize = true;
+            this.XB_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XB_2.ForeColor = System.Drawing.Color.Indigo;
+            this.XB_2.Image = ((System.Drawing.Image)(resources.GetObject("XB_2.Image")));
+            this.XB_2.Location = new System.Drawing.Point(998, 307);
+            this.XB_2.Name = "XB_2";
+            this.XB_2.Size = new System.Drawing.Size(25, 13);
+            this.XB_2.TabIndex = 137;
+            this.XB_2.Text = "XB";
+            // 
+            // MS_2
+            // 
+            this.MS_2.AutoSize = true;
+            this.MS_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MS_2.ForeColor = System.Drawing.Color.Indigo;
+            this.MS_2.Image = ((System.Drawing.Image)(resources.GetObject("MS_2.Image")));
+            this.MS_2.Location = new System.Drawing.Point(871, 346);
+            this.MS_2.Name = "MS_2";
+            this.MS_2.Size = new System.Drawing.Size(25, 13);
+            this.MS_2.TabIndex = 136;
+            this.MS_2.Text = "MS";
+            // 
+            // LS_2
+            // 
+            this.LS_2.AutoSize = true;
+            this.LS_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LS_2.ForeColor = System.Drawing.Color.Indigo;
+            this.LS_2.Image = ((System.Drawing.Image)(resources.GetObject("LS_2.Image")));
+            this.LS_2.Location = new System.Drawing.Point(871, 333);
+            this.LS_2.Name = "LS_2";
+            this.LS_2.Size = new System.Drawing.Size(25, 13);
+            this.LS_2.TabIndex = 135;
+            this.LS_2.Text = "LS";
+            // 
+            // MR_2
+            // 
+            this.MR_2.AutoSize = true;
+            this.MR_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MR_2.ForeColor = System.Drawing.Color.Indigo;
+            this.MR_2.Image = ((System.Drawing.Image)(resources.GetObject("MR_2.Image")));
+            this.MR_2.Location = new System.Drawing.Point(871, 320);
+            this.MR_2.Name = "MR_2";
+            this.MR_2.Size = new System.Drawing.Size(25, 13);
+            this.MR_2.TabIndex = 134;
+            this.MR_2.Text = "MR";
+            // 
+            // HR_2
+            // 
+            this.HR_2.AutoSize = true;
+            this.HR_2.Font = new System.Drawing.Font("Minecraft", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HR_2.ForeColor = System.Drawing.Color.Indigo;
+            this.HR_2.Image = ((System.Drawing.Image)(resources.GetObject("HR_2.Image")));
+            this.HR_2.Location = new System.Drawing.Point(871, 307);
+            this.HR_2.Name = "HR_2";
+            this.HR_2.Size = new System.Drawing.Size(25, 13);
+            this.HR_2.TabIndex = 133;
+            this.HR_2.Text = "HR";
+            // 
+            // lel_2
+            // 
+            this.lel_2.AutoSize = true;
+            this.lel_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.lel_2.ForeColor = System.Drawing.Color.Lime;
+            this.lel_2.Image = ((System.Drawing.Image)(resources.GetObject("lel_2.Image")));
+            this.lel_2.Location = new System.Drawing.Point(1119, 340);
+            this.lel_2.Name = "lel_2";
+            this.lel_2.Size = new System.Drawing.Size(45, 15);
+            this.lel_2.TabIndex = 132;
+            this.lel_2.Text = "[LE]";
+            // 
+            // eml_2
+            // 
+            this.eml_2.AutoSize = true;
+            this.eml_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.eml_2.ForeColor = System.Drawing.Color.Lime;
+            this.eml_2.Image = ((System.Drawing.Image)(resources.GetObject("eml_2.Image")));
+            this.eml_2.Location = new System.Drawing.Point(1119, 279);
+            this.eml_2.Name = "eml_2";
+            this.eml_2.Size = new System.Drawing.Size(45, 15);
+            this.eml_2.TabIndex = 131;
+            this.eml_2.Text = "[EM]";
+            // 
+            // lelI_2
+            // 
+            this.lelI_2.BackColor = System.Drawing.Color.Gray;
+            this.lelI_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lelI_2.BackgroundImage")));
+            this.lelI_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lelI_2.ImageLocation = "http://i.imgur.com/xgpkCJH.png";
+            this.lelI_2.Location = new System.Drawing.Point(1170, 340);
+            this.lelI_2.Name = "lelI_2";
+            this.lelI_2.Size = new System.Drawing.Size(16, 16);
+            this.lelI_2.TabIndex = 130;
+            this.lelI_2.TabStop = false;
+            // 
+            // emlI_2
+            // 
+            this.emlI_2.BackColor = System.Drawing.Color.Gray;
+            this.emlI_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("emlI_2.BackgroundImage")));
+            this.emlI_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.emlI_2.ImageLocation = "http://i.imgur.com/XmkL9AK.png";
+            this.emlI_2.Location = new System.Drawing.Point(1170, 278);
+            this.emlI_2.Name = "emlI_2";
+            this.emlI_2.Size = new System.Drawing.Size(16, 16);
+            this.emlI_2.TabIndex = 129;
+            this.emlI_2.TabStop = false;
+            // 
+            // LE_2
+            // 
+            this.LE_2.AutoSize = true;
+            this.LE_2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LE_2.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
+            this.LE_2.ForeColor = System.Drawing.Color.White;
+            this.LE_2.Location = new System.Drawing.Point(1048, 378);
+            this.LE_2.Name = "LE_2";
+            this.LE_2.Size = new System.Drawing.Size(34, 16);
+            this.LE_2.TabIndex = 128;
+            this.LE_2.Text = "LE";
+            // 
+            // custLE_2
+            // 
+            this.custLE_2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.custLE_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custLE_2.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custLE_2.ForeColor = System.Drawing.Color.White;
+            this.custLE_2.Location = new System.Drawing.Point(993, 379);
+            this.custLE_2.MaxLength = 4;
+            this.custLE_2.Name = "custLE_2";
+            this.custLE_2.Size = new System.Drawing.Size(49, 15);
+            this.custLE_2.TabIndex = 127;
+            this.custLE_2.Text = "0";
+            // 
+            // EB_2
+            // 
+            this.EB_2.AutoSize = true;
+            this.EB_2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.EB_2.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
+            this.EB_2.ForeColor = System.Drawing.Color.White;
+            this.EB_2.Location = new System.Drawing.Point(953, 378);
+            this.EB_2.Name = "EB_2";
+            this.EB_2.Size = new System.Drawing.Size(34, 16);
+            this.EB_2.TabIndex = 126;
+            this.EB_2.Text = "EB";
+            // 
+            // custEB_2
+            // 
+            this.custEB_2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.custEB_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custEB_2.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custEB_2.ForeColor = System.Drawing.Color.White;
+            this.custEB_2.Location = new System.Drawing.Point(898, 379);
+            this.custEB_2.MaxLength = 4;
+            this.custEB_2.Name = "custEB_2";
+            this.custEB_2.Size = new System.Drawing.Size(49, 15);
+            this.custEB_2.TabIndex = 125;
+            this.custEB_2.Text = "0";
+            // 
+            // E_2
+            // 
+            this.E_2.AutoSize = true;
+            this.E_2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.E_2.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
+            this.E_2.ForeColor = System.Drawing.Color.White;
+            this.E_2.Location = new System.Drawing.Point(871, 379);
+            this.E_2.Name = "E_2";
+            this.E_2.Size = new System.Drawing.Size(21, 16);
+            this.E_2.TabIndex = 124;
+            this.E_2.Text = "E";
+            // 
+            // ebl_2
+            // 
+            this.ebl_2.AutoSize = true;
+            this.ebl_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.ebl_2.ForeColor = System.Drawing.Color.Lime;
+            this.ebl_2.Image = ((System.Drawing.Image)(resources.GetObject("ebl_2.Image")));
+            this.ebl_2.Location = new System.Drawing.Point(1119, 309);
+            this.ebl_2.Name = "ebl_2";
+            this.ebl_2.Size = new System.Drawing.Size(45, 15);
+            this.ebl_2.TabIndex = 123;
+            this.ebl_2.Text = "[EB]";
+            // 
+            // eblI_2
+            // 
+            this.eblI_2.BackColor = System.Drawing.Color.Gray;
+            this.eblI_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eblI_2.BackgroundImage")));
+            this.eblI_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eblI_2.ImageLocation = "http://i.imgur.com/fhE2FNd.png";
+            this.eblI_2.Location = new System.Drawing.Point(1170, 309);
+            this.eblI_2.Name = "eblI_2";
+            this.eblI_2.Size = new System.Drawing.Size(16, 16);
+            this.eblI_2.TabIndex = 122;
+            this.eblI_2.TabStop = false;
+            // 
+            // custE_2
+            // 
+            this.custE_2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.custE_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custE_2.Font = new System.Drawing.Font("Minecraft", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custE_2.ForeColor = System.Drawing.Color.White;
+            this.custE_2.Location = new System.Drawing.Point(816, 379);
+            this.custE_2.MaxLength = 4;
+            this.custE_2.Name = "custE_2";
+            this.custE_2.Size = new System.Drawing.Size(49, 15);
+            this.custE_2.TabIndex = 121;
+            this.custE_2.Text = "0";
+            // 
+            // lvlPic_2
+            // 
+            this.lvlPic_2.AutoSize = true;
+            this.lvlPic_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.lvlPic_2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lvlPic_2.Image = ((System.Drawing.Image)(resources.GetObject("lvlPic_2.Image")));
+            this.lvlPic_2.Location = new System.Drawing.Point(990, 284);
+            this.lvlPic_2.Name = "lvlPic_2";
+            this.lvlPic_2.Size = new System.Drawing.Size(73, 15);
+            this.lvlPic_2.TabIndex = 120;
+            this.lvlPic_2.Text = "[Level]";
+            // 
+            // statPic_2
+            // 
+            this.statPic_2.AutoSize = true;
+            this.statPic_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.statPic_2.ForeColor = System.Drawing.Color.Teal;
+            this.statPic_2.Image = ((System.Drawing.Image)(resources.GetObject("statPic_2.Image")));
+            this.statPic_2.Location = new System.Drawing.Point(830, 284);
+            this.statPic_2.Name = "statPic_2";
+            this.statPic_2.Size = new System.Drawing.Size(98, 15);
+            this.statPic_2.TabIndex = 119;
+            this.statPic_2.Text = "[Dmg/Def]";
+            // 
+            // namePic_2
+            // 
+            this.namePic_2.AutoSize = true;
+            this.namePic_2.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold);
+            this.namePic_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.namePic_2.Image = ((System.Drawing.Image)(resources.GetObject("namePic_2.Image")));
+            this.namePic_2.Location = new System.Drawing.Point(830, 255);
+            this.namePic_2.Name = "namePic_2";
+            this.namePic_2.Size = new System.Drawing.Size(78, 16);
+            this.namePic_2.TabIndex = 118;
+            this.namePic_2.Text = "[Name]";
+            // 
+            // img_2
+            // 
+            this.img_2.BackColor = System.Drawing.Color.Gray;
+            this.img_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("img_2.BackgroundImage")));
+            this.img_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.img_2.Location = new System.Drawing.Point(833, 317);
+            this.img_2.Name = "img_2";
+            this.img_2.Size = new System.Drawing.Size(32, 32);
+            this.img_2.TabIndex = 116;
+            this.img_2.TabStop = false;
+            // 
+            // itemPic_2
+            // 
+            this.itemPic_2.Image = ((System.Drawing.Image)(resources.GetObject("itemPic_2.Image")));
+            this.itemPic_2.Location = new System.Drawing.Point(816, 246);
+            this.itemPic_2.Name = "itemPic_2";
+            this.itemPic_2.Size = new System.Drawing.Size(384, 121);
+            this.itemPic_2.TabIndex = 117;
+            this.itemPic_2.TabStop = false;
+            // 
+            // colors
+            // 
+            this.colors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.colors.Font = new System.Drawing.Font("Minecraft", 12.5F);
+            this.colors.FormattingEnabled = true;
+            this.colors.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.colors.IntegralHeight = false;
+            this.colors.Items.AddRange(new object[] {
+            "WynnIDB",
+            "Wynncraft"});
+            this.colors.Location = new System.Drawing.Point(816, 24);
+            this.colors.MaxDropDownItems = 9;
+            this.colors.Name = "colors";
+            this.colors.Size = new System.Drawing.Size(143, 25);
+            this.colors.TabIndex = 142;
+            this.colors.SelectedIndexChanged += new System.EventHandler(this.colors_SelectedIndexChanged);
+            // 
+            // imgClass
+            // 
+            this.imgClass.AutoSize = true;
+            this.imgClass.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.imgClass.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.imgClass.Image = ((System.Drawing.Image)(resources.GetObject("imgClass.Image")));
+            this.imgClass.Location = new System.Drawing.Point(1126, 101);
+            this.imgClass.Name = "imgClass";
+            this.imgClass.Size = new System.Drawing.Size(73, 15);
+            this.imgClass.TabIndex = 143;
+            this.imgClass.Text = "[Class]";
+            this.imgClass.Visible = false;
+            // 
+            // imgClass_2
+            // 
+            this.imgClass_2.AutoSize = true;
+            this.imgClass_2.Font = new System.Drawing.Font("Minecraft", 11F);
+            this.imgClass_2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.imgClass_2.Image = ((System.Drawing.Image)(resources.GetObject("imgClass_2.Image")));
+            this.imgClass_2.Location = new System.Drawing.Point(1126, 370);
+            this.imgClass_2.Name = "imgClass_2";
+            this.imgClass_2.Size = new System.Drawing.Size(73, 15);
+            this.imgClass_2.TabIndex = 144;
+            this.imgClass_2.Text = "[Class]";
+            this.imgClass_2.Visible = false;
             // 
             // wynnidb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(913, 468);
+            this.ClientSize = new System.Drawing.Size(1211, 434);
+            this.Controls.Add(this.imgClass_2);
+            this.Controls.Add(this.imgClass);
+            this.Controls.Add(this.colors);
+            this.Controls.Add(this.P_2);
+            this.Controls.Add(this.powder_2);
+            this.Controls.Add(this.SD_2);
+            this.Controls.Add(this.LB_2);
+            this.Controls.Add(this.XB_2);
+            this.Controls.Add(this.MS_2);
+            this.Controls.Add(this.LS_2);
+            this.Controls.Add(this.MR_2);
+            this.Controls.Add(this.HR_2);
+            this.Controls.Add(this.lel_2);
+            this.Controls.Add(this.eml_2);
+            this.Controls.Add(this.lelI_2);
+            this.Controls.Add(this.emlI_2);
+            this.Controls.Add(this.LE_2);
+            this.Controls.Add(this.custLE_2);
+            this.Controls.Add(this.EB_2);
+            this.Controls.Add(this.custEB_2);
+            this.Controls.Add(this.E_2);
+            this.Controls.Add(this.ebl_2);
+            this.Controls.Add(this.eblI_2);
+            this.Controls.Add(this.custE_2);
+            this.Controls.Add(this.lvlPic_2);
+            this.Controls.Add(this.statPic_2);
+            this.Controls.Add(this.namePic_2);
+            this.Controls.Add(this.img_2);
+            this.Controls.Add(this.itemPic_2);
+            this.Controls.Add(this.imgSelect);
+            this.Controls.Add(this.minmaxLoot);
+            this.Controls.Add(this.minmaxSpell);
+            this.Controls.Add(this.minmax3);
+            this.Controls.Add(this.minmax2);
+            this.Controls.Add(this.minmaxXP);
+            this.Controls.Add(this.minmax1);
+            this.Controls.Add(this.P);
+            this.Controls.Add(this.powder);
             this.Controls.Add(this.SD);
             this.Controls.Add(this.LB);
             this.Controls.Add(this.XB);
@@ -974,19 +1496,17 @@
             this.Controls.Add(this.LS);
             this.Controls.Add(this.MR);
             this.Controls.Add(this.HR);
-            this.Controls.Add(this.mColors);
-            this.Controls.Add(this.idbColors);
             this.Controls.Add(this.lel);
-            this.Controls.Add(this.em);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.eml);
+            this.Controls.Add(this.lelI);
+            this.Controls.Add(this.emlI);
             this.Controls.Add(this.LE);
             this.Controls.Add(this.custLE);
             this.Controls.Add(this.EB);
             this.Controls.Add(this.custEB);
             this.Controls.Add(this.E);
             this.Controls.Add(this.ebl);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.eblI);
             this.Controls.Add(this.custE);
             this.Controls.Add(this.lvlPic);
             this.Controls.Add(this.statPic);
@@ -1042,7 +1562,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "wynnidb";
-            this.Text = "WynnIDB [v1.11_1]";
+            this.Text = "WynnIDB [v1.11_2]";
             ((System.ComponentModel.ISupportInitialize)(this.minDmg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxDmg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.def)).EndInit();
@@ -1063,9 +1583,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.xpBns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lootBns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eblI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emlI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lelI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minmax3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lelI_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emlI_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eblI_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemPic_2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1123,19 +1651,17 @@
         private System.Windows.Forms.Label statPic;
         private System.Windows.Forms.Label lvlPic;
         private System.Windows.Forms.TextBox custE;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox eblI;
         private System.Windows.Forms.Label ebl;
         private System.Windows.Forms.Label E;
         private System.Windows.Forms.Label EB;
         private System.Windows.Forms.TextBox custEB;
         private System.Windows.Forms.Label LE;
         private System.Windows.Forms.TextBox custLE;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label em;
+        private System.Windows.Forms.PictureBox emlI;
+        private System.Windows.Forms.PictureBox lelI;
+        private System.Windows.Forms.Label eml;
         private System.Windows.Forms.Label lel;
-        private System.Windows.Forms.CheckBox idbColors;
-        private System.Windows.Forms.CheckBox mColors;
         private System.Windows.Forms.Label HR;
         private System.Windows.Forms.Label MR;
         private System.Windows.Forms.Label LS;
@@ -1143,6 +1669,44 @@
         private System.Windows.Forms.Label XB;
         private System.Windows.Forms.Label LB;
         private System.Windows.Forms.Label SD;
+        private System.Windows.Forms.ComboBox powder;
+        private System.Windows.Forms.Label P;
+        private System.Windows.Forms.PictureBox minmax1;
+        private System.Windows.Forms.TextBox minmaxXP;
+        private System.Windows.Forms.PictureBox minmax2;
+        private System.Windows.Forms.PictureBox minmax3;
+        private System.Windows.Forms.TextBox minmaxSpell;
+        private System.Windows.Forms.TextBox minmaxLoot;
+        private System.Windows.Forms.ComboBox imgSelect;
+        private System.Windows.Forms.Label P_2;
+        private System.Windows.Forms.ComboBox powder_2;
+        private System.Windows.Forms.Label SD_2;
+        private System.Windows.Forms.Label LB_2;
+        private System.Windows.Forms.Label XB_2;
+        private System.Windows.Forms.Label MS_2;
+        private System.Windows.Forms.Label LS_2;
+        private System.Windows.Forms.Label MR_2;
+        private System.Windows.Forms.Label HR_2;
+        private System.Windows.Forms.Label lel_2;
+        private System.Windows.Forms.Label eml_2;
+        private System.Windows.Forms.PictureBox lelI_2;
+        private System.Windows.Forms.PictureBox emlI_2;
+        private System.Windows.Forms.Label LE_2;
+        private System.Windows.Forms.TextBox custLE_2;
+        private System.Windows.Forms.Label EB_2;
+        private System.Windows.Forms.TextBox custEB_2;
+        private System.Windows.Forms.Label E_2;
+        private System.Windows.Forms.Label ebl_2;
+        private System.Windows.Forms.PictureBox eblI_2;
+        private System.Windows.Forms.TextBox custE_2;
+        private System.Windows.Forms.Label lvlPic_2;
+        private System.Windows.Forms.Label statPic_2;
+        private System.Windows.Forms.Label namePic_2;
+        private System.Windows.Forms.PictureBox img_2;
+        private System.Windows.Forms.PictureBox itemPic_2;
+        private System.Windows.Forms.ComboBox colors;
+        private System.Windows.Forms.Label imgClass;
+        private System.Windows.Forms.Label imgClass_2;
     }
 }
 

@@ -20,9 +20,13 @@ namespace WynnIDB
             InitializeComponent();
             click();
             itemClass.SelectedIndex = 0;
-            pictureBox2.Visible = false; em.Visible = false; pictureBox1.Visible = false; ebl.Visible = false; pictureBox3.Visible = false; lel.Visible = false;
+            emlI.Visible = false; eml.Visible = false; eblI.Visible = false; ebl.Visible = false; lelI.Visible = false; lel.Visible = false;
+            emlI_2.Visible = false; eml_2.Visible = false; eblI_2.Visible = false; ebl_2.Visible = false; lelI_2.Visible = false; lel_2.Visible = false;
+            imgSelect.SelectedIndex = 0;
+            colors.SelectedIndex = 0;
         }
         DataTable dt = new DataTable();
+        int imgSelected = 1;
         string bClass = String.Empty;
         string sheetName = String.Empty;
         bool mccolors = false;
@@ -122,26 +126,17 @@ namespace WynnIDB
             {
                 if (row[1].ToString() == itemNames.SelectedItem.ToString())
                 {
-                    if (custE.Text == "0" || custE.Text == "") { pictureBox2.Visible = false; }
-                    else { pictureBox2.Visible = true; em.Text = custE.Text; }
-                    if (custEB.Text == "0" || custEB.Text == "") { pictureBox1.Visible = false; }
-                    else { pictureBox1.Visible = true; ebl.Text = custE.Text; }
-                    if (custLE.Text == "0" || custLE.Text == "") { pictureBox3.Visible = false; }
-                    else { pictureBox3.Visible = true; lel.Text = custE.Text; }
-                    namePic.Text = row[1].ToString();
-                    if (row[1].ToString() == "Purified Helmet of the Legends") { namePic.Text = "Helmet of the Legends"; }
                     nameTxt.Text = row[1].ToString();
                     minLvlTxt.Text = row[2].ToString();
-                    lvlPic.Text = "Min. Lvl: " + row[2].ToString();
                     tierTxt.Text = row[5].ToString();
                     idTxt.Text = row[0].ToString();
-                    if (row[7].ToString() != "0") { healthRgnTxt.Text = "+ " + row[7].ToString(); } else { healthRgnTxt.Text = "None"; } 
-                    if (row[8].ToString() != "0") { manaRgnTxt.Text = "+ " + row[8].ToString(); } else { manaRgnTxt.Text = "None"; }
-                    if (row[9].ToString() != "0") { spellDmgTxt.Text = "+ " + row[9].ToString() + "%"; } else { spellDmgTxt.Text = "None"; }
-                    if (row[10].ToString() != "0") { lifeStlTxt.Text = "+ " + row[10].ToString(); } else { lifeStlTxt.Text = "None"; }
-                    if (row[11].ToString() != "0") { manaStlTxt.Text = "+ " + row[11].ToString(); } else { manaStlTxt.Text = "None"; }
-                    if (row[12].ToString() != "0") { xpBnsTxt.Text = "+ " + row[12].ToString() + "%"; } else { xpBnsTxt.Text = "None"; }
-                    if (row[13].ToString() != "0") { lootBnsTxt.Text = "+ " + row[13].ToString()+ "%"; } else { lootBnsTxt.Text = "None"; }
+                    if (row[7].ToString() != "0") { healthRgnTxt.Text = row[7].ToString(); } else { healthRgnTxt.Text = "None"; } 
+                    if (row[8].ToString() != "0") { manaRgnTxt.Text = row[8].ToString(); } else { manaRgnTxt.Text = "None"; }
+                    if (row[9].ToString() != "0") { spellDmgTxt.Text = row[9].ToString(); minmaxSpell.Text = "SD: " + Math.Round(Double.Parse(row[9].ToString()) * 0.7,0,MidpointRounding.AwayFromZero).ToString() + " | " + Math.Round(Double.Parse(row[9].ToString()) * 1.3,0,MidpointRounding.AwayFromZero).ToString(); } else { spellDmgTxt.Text = "None"; }
+                    if (row[10].ToString() != "0") { lifeStlTxt.Text = row[10].ToString(); } else { lifeStlTxt.Text = "None"; }
+                    if (row[11].ToString() != "0") { manaStlTxt.Text = row[11].ToString(); } else { manaStlTxt.Text = "None"; }
+                    if (row[12].ToString() != "0") { xpBnsTxt.Text = row[12].ToString(); minmaxXP.Text = "XP: " + Math.Round(Double.Parse(row[12].ToString()) * 0.7,0,MidpointRounding.AwayFromZero).ToString() + " | " + Math.Round(Double.Parse(row[12].ToString()) * 1.3,0,MidpointRounding.AwayFromZero).ToString(); } else { xpBnsTxt.Text = "None"; }
+                    if (row[13].ToString() != "0") { lootBnsTxt.Text = row[13].ToString(); minmaxLoot.Text = "LB: " + Math.Round(Double.Parse(row[13].ToString()) * 0.7,0,MidpointRounding.AwayFromZero).ToString() + " | " + Math.Round(Double.Parse(row[13].ToString()) * 1.3,0,MidpointRounding.AwayFromZero).ToString(); } else { lootBnsTxt.Text = "None"; }
                     if (row[6].ToString() == "0") { costTxt.Text = "-"; }
                     else
                     {
@@ -174,17 +169,16 @@ namespace WynnIDB
                     }
                     if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
                     {
-                        statPic.Text = "Dmg: " + row[3].ToString() + " - " + row[4].ToString();
                         defTxt.ForeColor = System.Drawing.Color.Indigo; defTxt.Text = "-";
                         pieceTxt.ForeColor = System.Drawing.Color.Indigo; pieceTxt.Text = "-";
-                        minDmgTxt.Text = row[3].ToString() + " (Shp. I: " + (Int16.Parse(row[3].ToString()) * 1.1) + ", Shp. II: " + (Int16.Parse(row[3].ToString()) * 1.15) + ")"; minDmgTxt.ForeColor = System.Drawing.Color.Teal;
-                        maxDmgTxt.Text = row[4].ToString() + " (Shp. I: " + (Int16.Parse(row[4].ToString()) * 1.1) + ", Shp. II: " + (Int16.Parse(row[4].ToString()) * 1.15) + ")"; maxDmgTxt.ForeColor = System.Drawing.Color.Teal;
+                        minDmgTxt.Text = row[3].ToString() + " | " + (Int16.Parse(row[3].ToString()) * 1.1) + " | " + (Int16.Parse(row[3].ToString()) * 1.15); minDmgTxt.ForeColor = System.Drawing.Color.Teal;
+                        maxDmgTxt.Text = row[4].ToString() + " | " + (Int16.Parse(row[4].ToString()) * 1.1) + " | " + (Int16.Parse(row[4].ToString()) * 1.15); maxDmgTxt.ForeColor = System.Drawing.Color.Teal;
                         double min = Int16.Parse(row[3].ToString());
                         double max = Int16.Parse(row[4].ToString());
                         List<double> avgl = new List<double> { min, max };
                         List<double> avgl1 = new List<double> { (min * 1.1), (max * 1.1) };
                         List<double> avgl2 = new List<double> { (min * 1.15), (max * 1.15) };
-                        avgDmgTxt.Text = avgl.Average().ToString() + " (Shp. I: " + avgl1.Average().ToString() + ", Shp. II: " + avgl2.Average().ToString() + ")"; avgDmgTxt.ForeColor = System.Drawing.Color.Teal;
+                        avgDmgTxt.Text = avgl.Average().ToString() + " | " + avgl1.Average().ToString() + " | " + avgl2.Average().ToString(); avgDmgTxt.ForeColor = System.Drawing.Color.Teal;
                         switch (sheetName)
                         {
                             case "Spears": clsTxt.Text = "Warrior"; break;
@@ -195,7 +189,6 @@ namespace WynnIDB
                     }
                     else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
                     {
-                        statPic.Text = "Def: " + row[3].ToString();
                         minDmgTxt.Text = "-"; minDmgTxt.ForeColor = System.Drawing.Color.Indigo;
                         maxDmgTxt.Text = "-"; maxDmgTxt.ForeColor = System.Drawing.Color.Indigo;
                         avgDmgTxt.Text = "-"; avgDmgTxt.ForeColor = System.Drawing.Color.Indigo;
@@ -212,15 +205,6 @@ namespace WynnIDB
                             case "ArmourQuest": clsTxt.Text = "Quest"; break;
                         }
                     }
-                    if (mccolors) 
-                    {
-                        if (row[5].ToString() == "Basic") { namePic.ForeColor = System.Drawing.Color.White; }
-                        else if (row[5].ToString() == "Unique") { namePic.ForeColor = System.Drawing.Color.Yellow; }
-                        else if (row[5].ToString() == "Rare") { namePic.ForeColor = System.Drawing.Color.Magenta; }
-                        else if (row[5].ToString() == "Legendary") { namePic.ForeColor = System.Drawing.Color.DeepSkyBlue; }
-                        else if (row[5].ToString() == "Special") { namePic.ForeColor = System.Drawing.Color.White; }
-                        else if (row[5].ToString() == "Quest") { namePic.ForeColor = System.Drawing.Color.White; }
-                    }
                 }
             }
         }
@@ -229,55 +213,113 @@ namespace WynnIDB
         public void getImg()
         {
             getExcelData();
-            if (sheetName == "Spears") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/0/01/Grid_Iron_Shovel.png"; }
-            else if (sheetName == "Wands") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e9/Grid_Stick.png"; }
-            else if (sheetName == "Bows") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/4/49/Grid_Bow.png"; }
-            else if (sheetName == "Daggers") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/1/13/Grid_Shears.png"; }
+            if (imgSelected == 1)
+            {
+            if (imgClass.Text == "Spears") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/0/01/Grid_Iron_Shovel.png"; }
+            else if (imgClass.Text == "Wands") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e9/Grid_Stick.png"; }
+            else if (imgClass.Text == "Bows") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/4/49/Grid_Bow.png"; }
+            else if (imgClass.Text == "Daggers") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/1/13/Grid_Shears.png"; }
             foreach (DataRow row in dt.Rows)
             {
                 if (row[1].ToString() == itemNames.SelectedItem.ToString())
                 {
-                    if (sheetName == "ArmourLeather")
+                    if (imgClass.Text == "ArmourLeather")
                     {
                         if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/2/24/Grid_Leather_Cap.png"; }
                         else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/ed/Grid_Leather_Tunic.png"; }
                         else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/c/ce/Grid_Leather_Pants.png"; }
                         else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/0/06/Grid_Leather_Boots.png"; }
                     }
-                    else if (sheetName == "ArmourGold")
+                    else if (imgClass.Text == "ArmourGold")
                     {
                         if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/4/45/Grid_Golden_Helmet.png"; }
                         else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/6/67/Grid_Golden_Chestplate.png"; }
                         else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/f8/Grid_Golden_Leggings.png"; }
                         else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/fb/Grid_Golden_Boots.png"; }
                     }
-                    else if (sheetName == "ArmourChain")
+                    else if (imgClass.Text == "ArmourChain")
                     {
                         if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/c/c3/Grid_Chain_Helmet.png"; }
                         else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/7/77/Grid_Chain_Chestplate.png"; }
                         else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/2/26/Grid_Chain_Leggings.png"; }
                         else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/9/93/Grid_Chain_Boots.png"; }
                     }
-                    else if (sheetName == "ArmourIron")
+                    else if (imgClass.Text == "ArmourIron")
                     {
                         if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/ec/Grid_Iron_Helmet.png"; }
                         else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/8/8d/Grid_Iron_Chestplate.png"; }
                         else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/9/99/Grid_Iron_Leggings.png"; }
                         else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/f5/Grid_Iron_Boots.png"; }
                     }
-                    else if (sheetName == "ArmourDiamond")
+                    else if (imgClass.Text == "ArmourDiamond")
                     {
                         if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/b/bd/Grid_Diamond_Helmet.png"; }
                         else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e7/Grid_Diamond_Chestplate.png"; }
                         else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e3/Grid_Diamond_Leggings.png"; }
                         else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/d/d1/Grid_Diamond_Boots.png"; }
                     }
-                    else if (sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
+                    else if (imgClass.Text == "ArmourSpecial" || imgClass.Text == "ArmourQuest")
                     {
-                        if (row[4].ToString() == "Helmet") { img.Visible = false; }
-                        else if (row[4].ToString() == "Chestplate") { img.Visible = false; }
-                        else if (row[4].ToString() == "Leggings") { img.Visible = false; }
-                        else if (row[4].ToString() == "Boots") { img.Visible = false; }
+                        if (row[4].ToString() == "Helmet") { img.ImageLocation = "http://imgur.com/Z3urkUb.png"; }
+                        else if (row[4].ToString() == "Chestplate") { img.ImageLocation = "http://imgur.com/XQsTi5q.png"; }
+                        else if (row[4].ToString() == "Leggings") { img.ImageLocation = "http://imgur.com/Ei6Mmto.png"; }
+                        else if (row[4].ToString() == "Boots") { img.ImageLocation = "http://imgur.com/xH0lieT.png"; }
+                    }
+                }
+                }
+            }
+            else if (imgSelected == 2)
+            {
+                if (imgClass_2.Text == "Spears") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/0/01/Grid_Iron_Shovel.png"; }
+                else if (imgClass_2.Text == "Wands") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e9/Grid_Stick.png"; }
+                else if (imgClass_2.Text == "Bows") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/4/49/Grid_Bow.png"; }
+                else if (imgClass_2.Text == "Daggers") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/1/13/Grid_Shears.png"; }
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[1].ToString() == itemNames.SelectedItem.ToString())
+                    {
+                        if (imgClass_2.Text == "ArmourLeather")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/2/24/Grid_Leather_Cap.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/ed/Grid_Leather_Tunic.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/c/ce/Grid_Leather_Pants.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/0/06/Grid_Leather_Boots.png"; }
+                        }
+                        else if (imgClass_2.Text == "ArmourGold")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/4/45/Grid_Golden_Helmet.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/6/67/Grid_Golden_Chestplate.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/f8/Grid_Golden_Leggings.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/fb/Grid_Golden_Boots.png"; }
+                        }
+                        else if (imgClass_2.Text == "ArmourChain")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/c/c3/Grid_Chain_Helmet.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/7/77/Grid_Chain_Chestplate.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/2/26/Grid_Chain_Leggings.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/9/93/Grid_Chain_Boots.png"; }
+                        }
+                        else if (imgClass_2.Text == "ArmourIron")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/ec/Grid_Iron_Helmet.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/8/8d/Grid_Iron_Chestplate.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/9/99/Grid_Iron_Leggings.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/f5/Grid_Iron_Boots.png"; }
+                        }
+                        else if (imgClass_2.Text == "ArmourDiamond")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/b/bd/Grid_Diamond_Helmet.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e7/Grid_Diamond_Chestplate.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/e/e3/Grid_Diamond_Leggings.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://hydra-media.cursecdn.com/minecraft.gamepedia.com/d/d1/Grid_Diamond_Boots.png"; }
+                        }
+                        else if (imgClass_2.Text == "ArmourSpecial" || imgClass_2.Text == "ArmourQuest")
+                        {
+                            if (row[4].ToString() == "Helmet") { img_2.ImageLocation = "http://imgur.com/Z3urkUb.png"; }
+                            else if (row[4].ToString() == "Chestplate") { img_2.ImageLocation = "http://imgur.com/XQsTi5q.png"; }
+                            else if (row[4].ToString() == "Leggings") { img_2.ImageLocation = "http://imgur.com/Ei6Mmto.png"; }
+                            else if (row[4].ToString() == "Boots") { img_2.ImageLocation = "http://imgur.com/xH0lieT.png"; }
+                        }
                     }
                 }
             }
@@ -380,113 +422,382 @@ namespace WynnIDB
         #region customCost
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            int cc = 0;
-            if (custE.Text == "") { em.Text = ""; }
-            cc = 0; Int32.TryParse(custE.Text, out cc);
-            if (cc == 0) { custE.Text = ""; pictureBox2.Visible = false; }
-            else { em.Visible = true; pictureBox2.Visible = true;  em.Text = custE.Text; }
+            if (imgSelected == 1)
+            {
+                int cc = 0;
+                if (custE.Text == "") { eml.Text = ""; }
+                cc = 0; Int32.TryParse(custE.Text, out cc);
+                if (cc == 0) { custE.Text = ""; emlI.Visible = false; }
+                else { eml.Visible = true; emlI.Visible = true; eml.Text = custE.Text; }
+            }
+            if (imgSelected == 2)
+            {
+                int cc_2 = 0;
+                if (custE_2.Text == "") { eml_2.Text = ""; }
+                cc_2 = 0; Int32.TryParse(custE_2.Text, out cc_2);
+                if (cc_2 == 0) { custE_2.Text = ""; emlI_2.Visible = false; }
+                else { eml_2.Visible = true; emlI_2.Visible = true; eml_2.Text = custE_2.Text; }
+            }
         }
         private void custEB_TextChanged(object sender, EventArgs e)
         {
-            int cc2 = 0;
-            if (custEB.Text == "") { ebl.Text = ""; }
-            cc2 = 0; Int32.TryParse(custEB.Text, out cc2);
-            if (cc2 == 0) { custEB.Text = ""; pictureBox1.Visible = false; }
-            else { ebl.Visible = true; pictureBox1.Visible = true; ebl.Text = custEB.Text; }
+            if (imgSelected == 1)
+            {
+                int cc2 = 0;
+                if (custEB.Text == "") { ebl.Text = ""; }
+                cc2 = 0; Int32.TryParse(custEB.Text, out cc2);
+                if (cc2 == 0) { custEB.Text = ""; eblI.Visible = false; }
+                else { ebl.Visible = true; eblI.Visible = true; ebl.Text = custEB.Text; }
+            }
+            if (imgSelected == 2)
+            {
+                int cc2_2 = 0;
+                if (custEB_2.Text == "") { ebl_2.Text = ""; }
+                cc2_2 = 0; Int32.TryParse(custEB_2.Text, out cc2_2);
+                if (cc2_2 == 0) { custEB_2.Text = ""; eblI_2.Visible = false; }
+                else { ebl_2.Visible = true; eblI_2.Visible = true; ebl_2.Text = custEB_2.Text; }
+            }
         }
         private void custLE_TextChanged(object sender, EventArgs e)
         {
-            int cc3 = 0;
-            if (custLE.Text == "") { lel.Text = ""; }
-            cc3 = 0; Int32.TryParse(custLE.Text, out cc3);
-            if (cc3 == 0) { custLE.Text = ""; pictureBox3.Visible = false; }
-            else { lel.Visible = true; pictureBox3.Visible = true; lel.Text = custLE.Text; }
+            if (imgSelected == 1)
+            {
+                int cc3 = 0;
+                if (custLE.Text == "") { lel.Text = ""; }
+                cc3 = 0; Int32.TryParse(custLE.Text, out cc3);
+                if (cc3 == 0) { custLE.Text = ""; lelI.Visible = false; }
+                else { lel.Visible = true; lelI.Visible = true; lel.Text = custLE.Text; }
+            }
+            if (imgSelected == 2)
+            {
+                int cc3_2 = 0;
+                if (custLE_2.Text == "") { lel_2.Text = ""; }
+                cc3_2 = 0; Int32.TryParse(custLE_2.Text, out cc3_2);
+                if (cc3_2 == 0) { custLE_2.Text = ""; lelI_2.Visible = false; }
+                else { lel_2.Visible = true; lelI_2.Visible = true; lel_2.Text = custLE_2.Text; }
+            }
         }
         #endregion
         #region Colors
-        private void idbColors_CheckedChanged(object sender, EventArgs e)
+        private void colors_SelectedIndexChanged(object sender, EventArgs e)
         {
-            mccolors = false;
-            mColors.Checked = false;
+            if (colors.SelectedIndex == 0) { mccolors = false; }
+            else if (colors.SelectedIndex == 1) { mccolors = true; }
+            else { mccolors = false; }
+            if (mccolors) { mColor(); }
+            else if (!mccolors) { idbColor(); }
+        }
+        private void idbColor()
+        {
             namePic.ForeColor = System.Drawing.Color.FromArgb(255, 128, 0);
             statPic.ForeColor = System.Drawing.Color.Teal;
             lvlPic.ForeColor = System.Drawing.Color.DeepSkyBlue;
             HR.ForeColor = System.Drawing.Color.Indigo; MR.ForeColor = System.Drawing.Color.Indigo; LS.ForeColor = System.Drawing.Color.Indigo;
             MS.ForeColor = System.Drawing.Color.Indigo; XB.ForeColor = System.Drawing.Color.Indigo; LB.ForeColor = System.Drawing.Color.Indigo;
             SD.ForeColor = System.Drawing.Color.Indigo;
+            if (P.Text == "Sharpness I" || P.Text == "Thorns I") { P.ForeColor = System.Drawing.Color.Green; }
+            else if (P.Text == "Sharpness II" || P.Text == "Thorns II") { P.ForeColor = System.Drawing.Color.DarkGreen; }
+            else if (P.Text == "Fire Aspect I" || P.Text == "Blast Protection I") { P.ForeColor = System.Drawing.Color.Red; }
+            else if (P.Text == "Fire Aspect II" || P.Text == "Blast Protection II") { P.ForeColor = System.Drawing.Color.DarkRed; }
+            else if (P.Text == "Knockback I" || P.Text == "Feather Falling I") { P.ForeColor = System.Drawing.Color.Blue; }
+            else if (P.Text == "Knockback II" || P.Text == "Feather Falling II") { P.ForeColor = System.Drawing.Color.DarkBlue; }
+            namePic_2.ForeColor = System.Drawing.Color.FromArgb(255, 128, 0);
+            statPic_2.ForeColor = System.Drawing.Color.Teal;
+            lvlPic_2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            HR_2.ForeColor = System.Drawing.Color.Indigo; MR_2.ForeColor = System.Drawing.Color.Indigo; LS_2.ForeColor = System.Drawing.Color.Indigo;
+            MS_2.ForeColor = System.Drawing.Color.Indigo; XB_2.ForeColor = System.Drawing.Color.Indigo; LB_2.ForeColor = System.Drawing.Color.Indigo;
+            SD_2.ForeColor = System.Drawing.Color.Indigo;
+            if (P_2.Text == "Sharpness I" || P_2.Text == "Thorns I") { P_2.ForeColor = System.Drawing.Color.Green; }
+            else if (P_2.Text == "Sharpness II" || P_2.Text == "Thorns II") { P_2.ForeColor = System.Drawing.Color.DarkGreen; }
+            else if (P_2.Text == "Fire Aspect I" || P_2.Text == "Blast Protection I") { P_2.ForeColor = System.Drawing.Color.Red; }
+            else if (P_2.Text == "Fire Aspect II" || P_2.Text == "Blast Protection II") { P_2.ForeColor = System.Drawing.Color.DarkRed; }
+            else if (P_2.Text == "Knockback I" || P_2.Text == "Feather Falling I") { P_2.ForeColor = System.Drawing.Color.Blue; }
+            else if (P_2.Text == "Knockback II" || P_2.Text == "Feather Falling II") { P_2.ForeColor = System.Drawing.Color.DarkBlue; }
         }
-        private void mColors_CheckedChanged(object sender, EventArgs e)
+        private void mColor()
         {
-            mccolors = true;
-            idbColors.Checked = false;
             statPic.ForeColor = System.Drawing.Color.Purple;
             lvlPic.ForeColor = System.Drawing.Color.Gold;
-            HR.ForeColor = System.Drawing.Color.LightGray; MR.ForeColor = System.Drawing.Color.LightGray; LS.ForeColor = System.Drawing.Color.LightGray;
-            MS.ForeColor = System.Drawing.Color.LightGray; XB.ForeColor = System.Drawing.Color.LightGray; LB.ForeColor = System.Drawing.Color.LightGray;
-            SD.ForeColor = System.Drawing.Color.LightGray;
-        }
-        #endregion
-        #region getIDS + IDC
-        public void getIDS()
-        {
-            string a = ""; string b = ""; string c = ""; string d = ""; string e = ""; string f = ""; string g = "";
+            HR.ForeColor = System.Drawing.Color.Gray; MR.ForeColor = System.Drawing.Color.Gray; LS.ForeColor = System.Drawing.Color.Gray;
+            MS.ForeColor = System.Drawing.Color.Gray; XB.ForeColor = System.Drawing.Color.Gray; LB.ForeColor = System.Drawing.Color.Gray;
+            SD.ForeColor = System.Drawing.Color.Gray;
+            P.ForeColor = System.Drawing.Color.Gray;
             foreach (DataRow row in dt.Rows)
             {
-                if (row[1].ToString() == itemNames.SelectedItem.ToString()) 
+                if (row[1].ToString() == namePic.Text)
                 {
-                    a = row[7].ToString(); b = row[8].ToString(); c = row[9].ToString(); d = row[10].ToString();
-                    e = row[11].ToString(); f = row[12].ToString(); g = row[13].ToString();
+                    if (row[5].ToString() == "Basic") { namePic.ForeColor = System.Drawing.Color.White; }
+                    else if (row[5].ToString() == "Unique") { namePic.ForeColor = System.Drawing.Color.Yellow; }
+                    else if (row[5].ToString() == "Rare") { namePic.ForeColor = System.Drawing.Color.Magenta; }
+                    else if (row[5].ToString() == "Legendary") { namePic.ForeColor = System.Drawing.Color.DeepSkyBlue; }
+                    else if (row[5].ToString() == "Special") { namePic.ForeColor = System.Drawing.Color.White; }
+                    else if (row[5].ToString() == "Quest") { namePic.ForeColor = System.Drawing.Color.White; }
                 }
             }
-            try { Decimal.Parse(healthRgnTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (a != "0") { healthRgnTxt.Text = a; } else { healthRgnTxt.Text = "None"; } }
-            try { Int16.Parse(manaRgnTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (b != "0") { manaRgnTxt.Text = b; } else { manaRgnTxt.Text = "None"; } }
-            try { Int16.Parse(spellDmgTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (c != "0") { spellDmgTxt.Text = c; } else { spellDmgTxt.Text = "None"; } }
-            try { Decimal.Parse(lifeStlTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (d != "0") { lifeStlTxt.Text = d; } else { lifeStlTxt.Text = "None"; } }
-            try { Int16.Parse(manaStlTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (e != "0") { manaStlTxt.Text = e; } else { manaStlTxt.Text = "None"; } }
-            try { Int16.Parse(xpBnsTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (f != "0") { xpBnsTxt.Text = f; } else { xpBnsTxt.Text = "None"; } }
-            try { Int16.Parse(lootBnsTxt.Text.TrimStart('+').TrimEnd('%').Trim()); }
-            catch { if (g != "0") { lootBnsTxt.Text = g; } else { lootBnsTxt.Text = "None"; } }
-            if (healthRgnTxt.Text != "None") { HR.Text = "Health Rgn: " + healthRgnTxt.Text; HR.Visible = true; } else { HR.Text = ""; HR.Visible = false; }
-            if (manaRgnTxt.Text != "None") { MR.Text = "Mana Rgn: " + manaRgnTxt.Text; MR.Visible = true; } else { MR.Text = ""; MR.Visible = false; }
-            if (spellDmgTxt.Text != "None") { SD.Text = "Spell Dmg: " + spellDmgTxt.Text; SD.Visible = true; } else { SD.Text = ""; SD.Visible = false; }
-            if (lifeStlTxt.Text != "None") { LS.Text = "Life Stl: " + lifeStlTxt.Text; LS.Visible = true; } else { LS.Text = ""; LS.Visible = false; }
-            if (manaStlTxt.Text != "None") { MS.Text = "Mana Stl: " + manaStlTxt.Text; MS.Visible = true; } else { MS.Text = ""; MS.Visible = false; }
-            if (xpBnsTxt.Text != "None") { XB.Text = "XP Bns: " + xpBnsTxt.Text; XB.Visible = true; } else { XB.Text = ""; XB.Visible = false; }
-            if (lootBnsTxt.Text != "None") { LB.Text = "Loot Bns: " + lootBnsTxt.Text; LB.Visible = true; } else { LB.Text = ""; LB.Visible = false; }
+            statPic_2.ForeColor = System.Drawing.Color.Purple;
+            lvlPic_2.ForeColor = System.Drawing.Color.Gold;
+            HR_2.ForeColor = System.Drawing.Color.Gray; MR_2.ForeColor = System.Drawing.Color.Gray; LS_2.ForeColor = System.Drawing.Color.Gray;
+            MS_2.ForeColor = System.Drawing.Color.Gray; XB_2.ForeColor = System.Drawing.Color.Gray; LB_2.ForeColor = System.Drawing.Color.Gray;
+            SD_2.ForeColor = System.Drawing.Color.Gray;
+            P_2.ForeColor = System.Drawing.Color.Gray;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[1].ToString() == namePic_2.Text)
+                {
+                    if (row[5].ToString() == "Basic") { namePic_2.ForeColor = System.Drawing.Color.White; }
+                    else if (row[5].ToString() == "Unique") { namePic_2.ForeColor = System.Drawing.Color.Yellow; }
+                    else if (row[5].ToString() == "Rare") { namePic_2.ForeColor = System.Drawing.Color.Magenta; }
+                    else if (row[5].ToString() == "Legendary") { namePic_2.ForeColor = System.Drawing.Color.DeepSkyBlue; }
+                    else if (row[5].ToString() == "Special") { namePic_2.ForeColor = System.Drawing.Color.White; }
+                }
+            }
+        }
+        #endregion
+        #region getImgData + IDC
+        public void getImgData()
+        {
+            if (mccolors) { mColor(); }
+            else if (!mccolors) { idbColor(); }
+            if (imgSelected == 1)
+            {
+                if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row[1].ToString() == namePic.Text)
+                        {
+                            statPic.Text = "Dmg: " + row[3].ToString() + " - " + row[4].ToString();
+                            switch(sheetName)
+                            {
+                                case "Spears": { imgClass.Text = "Spears"; }
+                                    break;
+                                case "Wands": { imgClass.Text = "Wands"; }
+                                    break;
+                                case "Bows": { imgClass.Text = "Bows"; }
+                                    break;
+                                case "Daggers": { imgClass.Text = "Daggers"; }
+                                    break;
+                            }
+                        }
+                    }
+                    powder.Items.Clear(); powder.Items.Add((object)"None");
+                    powder.Items.Add((object)"Sharpness I"); powder.Items.Add((object)"Sharpness II"); powder.Items.Add((object)"Fire Aspect I");
+                    powder.Items.Add((object)"Fire Aspect II"); powder.Items.Add((object)"Knockback I"); powder.Items.Add((object)"Knockback II");
+                    try { powder.SelectedIndex = 0; }
+                    catch { }
+                }
+                else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row[1].ToString() == namePic.Text)
+                        {
+                            statPic.Text = "Def: " + row[3].ToString();
+                            switch (sheetName)
+                            {
+                                case "ArmourLeather": { imgClass.Text = "ArmourLeather"; }
+                                    break;
+                                case "ArmourGold": { imgClass.Text = "ArmourGold"; }
+                                    break;
+                                case "ArmourChain": { imgClass.Text = "ArmourChain"; }
+                                    break;
+                                case "ArmourIron": { imgClass.Text = "ArmourIron"; }
+                                    break;
+                                case "ArmourDiamond": { imgClass.Text = "ArmourDiamond"; }
+                                    break;
+                                case "ArmourSpecial": { imgClass.Text = "ArmourSpecial"; }
+                                    break;
+                                case "ArmourQuest": { imgClass.Text = "ArmourQuest"; }
+                                    break;
+                            }
+                        }
+                    }
+                    powder.Items.Clear(); powder.Items.Clear(); powder.Items.Add((object)"None");
+                    powder.Items.Add((object)"Thorns I"); powder.Items.Add((object)"Thorns II"); powder.Items.Add((object)"Blast Protection I");
+                    powder.Items.Add((object)"Blast Protection II"); powder.Items.Add((object)"Feather Falling I"); powder.Items.Add((object)"Feather Falling II");
+                    try { powder.SelectedIndex = 0; }
+                    catch { }
+                }
+                lvlPic.Text = "Min. Lvl: " + minLvlTxt.Text;
+                if (custE.Text == "0" || custE.Text == "") { emlI.Visible = false; }
+                else { emlI.Visible = true; eml.Text = custE.Text; }
+                if (custEB.Text == "0" || custEB.Text == "") { eblI.Visible = false; }
+                else { eblI.Visible = true; ebl.Text = custE.Text; }
+                if (custLE.Text == "0" || custLE.Text == "") { lelI.Visible = false; }
+                else { lelI.Visible = true; lel.Text = custE.Text; }
+                namePic.Text = nameTxt.Text;
+                if (nameTxt.Text == "Purified Helmet of the Legends") { namePic.Text = "Helmet of the Legends"; }
+                if (healthRgnTxt.Text != "None") { HR.Text = "Health Rgn: " + healthRgnTxt.Text; HR.Visible = true; } else { HR.Text = ""; HR.Visible = false; }
+                if (manaRgnTxt.Text != "None") { MR.Text = "Mana Rgn: " + manaRgnTxt.Text; MR.Visible = true; } else { MR.Text = ""; MR.Visible = false; }
+                if (spellDmgTxt.Text != "None") { SD.Text = "Spell Dmg: " + "+" + spellDmgTxt.Text + "%"; SD.Visible = true; } else { SD.Text = ""; SD.Visible = false; }
+                if (lifeStlTxt.Text != "None") { LS.Text = "Life Stl: " + lifeStlTxt.Text; LS.Visible = true; } else { LS.Text = ""; LS.Visible = false; }
+                if (manaStlTxt.Text != "None") { MS.Text = "Mana Stl: " + manaStlTxt.Text; MS.Visible = true; } else { MS.Text = ""; MS.Visible = false; }
+                if (xpBnsTxt.Text != "None") { XB.Text = "XP Bns: " + "+" + xpBnsTxt.Text + "%"; XB.Visible = true; } else { XB.Text = ""; XB.Visible = false; }
+                if (lootBnsTxt.Text != "None") { LB.Text = "Loot Bns: " + "+" + lootBnsTxt.Text; LB.Visible = true; } else { LB.Text = ""; LB.Visible = false; }
+            }
+            else if (imgSelected == 2)
+            {
+                if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row[1].ToString() == namePic_2.Text)
+                        {
+                            statPic_2.Text = "Dmg: " + row[3].ToString() + " - " + row[4].ToString();
+                            switch (sheetName)
+                            {
+                                case "Spears": { imgClass_2.Text = "Spears"; }
+                                    break;
+                                case "Wands": { imgClass_2.Text = "Wands"; }
+                                    break;
+                                case "Bows": { imgClass_2.Text = "Bows"; }
+                                    break;
+                                case "Daggers": { imgClass_2.Text = "Daggers"; }
+                                    break;
+                            }
+                        }
+                    }
+                    powder_2.Items.Clear(); powder_2.Items.Add((object)"None");
+                    powder_2.Items.Add((object)"Sharpness I"); powder_2.Items.Add((object)"Sharpness II"); powder_2.Items.Add((object)"Fire Aspect I");
+                    powder_2.Items.Add((object)"Fire Aspect II"); powder_2.Items.Add((object)"Knockback I"); powder_2.Items.Add((object)"Knockback II");
+                    try { powder_2.SelectedIndex = 0; }
+                    catch { }
+                }
+                else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row[1].ToString() == namePic_2.Text)
+                        {
+                            statPic_2.Text = "Def: " + row[3].ToString();
+                            switch (sheetName)
+                            {
+                                case "ArmourLeather": { imgClass_2.Text = "ArmourLeather"; }
+                                    break;
+                                case "ArmourGold": { imgClass_2.Text = "ArmourGold"; }
+                                    break;
+                                case "ArmourChain": { imgClass_2.Text = "ArmourChain"; }
+                                    break;
+                                case "ArmourIron": { imgClass_2.Text = "ArmourIron"; }
+                                    break;
+                                case "ArmourDiamond": { imgClass_2.Text = "ArmourDiamond"; }
+                                    break;
+                                case "ArmourSpecial": { imgClass_2.Text = "ArmourSpecial"; }
+                                    break;
+                                case "ArmourQuest": { imgClass_2.Text = "ArmourQuest"; }
+                                    break;
+                            }
+                        }
+                    }
+                    powder_2.Items.Clear(); powder_2.Items.Clear(); powder_2.Items.Add((object)"None");
+                    powder_2.Items.Add((object)"Thorns I"); powder_2.Items.Add((object)"Thorns II"); powder_2.Items.Add((object)"Blast Protection I");
+                    powder_2.Items.Add((object)"Blast Protection II"); powder_2.Items.Add((object)"Feather Falling I"); powder_2.Items.Add((object)"Feather Falling II");
+                    try { powder_2.SelectedIndex = 0; }
+                    catch { }
+                }
+                lvlPic_2.Text = "Min. Lvl: " + minLvlTxt.Text;
+                if (custE_2.Text == "0" || custE_2.Text == "") { emlI_2.Visible = false; }
+                else { emlI_2.Visible = true; eml_2.Text = custE.Text; }
+                if (custEB_2.Text == "0" || custEB_2.Text == "") { eblI_2.Visible = false; }
+                else { eblI_2.Visible = true; ebl_2.Text = custE_2.Text; }
+                if (custLE_2.Text == "0" || custLE_2.Text == "") { lelI_2.Visible = false; }
+                else { lelI_2.Visible = true; lel_2.Text = custE_2.Text; }
+                namePic_2.Text = nameTxt.Text;
+                if (nameTxt.Text == "Purified Helmet of the Legends") { namePic_2.Text = "Helmet of the Legends"; }
+                if (healthRgnTxt.Text != "None") { HR_2.Text = "Health Rgn: " + healthRgnTxt.Text; HR_2.Visible = true; } else { HR_2.Text = ""; HR_2.Visible = false; }
+                if (manaRgnTxt.Text != "None") { MR_2.Text = "Mana Rgn: " + manaRgnTxt.Text; MR_2.Visible = true; } else { MR_2.Text = ""; MR_2.Visible = false; }
+                if (spellDmgTxt.Text != "None") { SD_2.Text = "Spell Dmg: " + "+" + spellDmgTxt.Text + "%"; SD_2.Visible = true; } else { SD_2.Text = ""; SD_2.Visible = false; }
+                if (lifeStlTxt.Text != "None") { LS_2.Text = "Life Stl: " + lifeStlTxt.Text; LS_2.Visible = true; } else { LS_2.Text = ""; LS_2.Visible = false; }
+                if (manaStlTxt.Text != "None") { MS_2.Text = "Mana Stl: " + manaStlTxt.Text; MS_2.Visible = true; } else { MS_2.Text = ""; MS_2.Visible = false; }
+                if (xpBnsTxt.Text != "None") { XB_2.Text = "XP Bns: " + "+" + xpBnsTxt.Text + "%"; XB_2.Visible = true; } else { XB_2.Text = ""; XB_2.Visible = false; }
+                if (lootBnsTxt.Text != "None") { LB_2.Text = "Loot Bns: " + "+" + lootBnsTxt.Text; LB_2.Visible = true; } else { LB_2.Text = ""; LB_2.Visible = false; }
+            }
         }
         private void healthRgnTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void manaRgnTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void lifeStlTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void manaStlTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void xpBnsTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void lootBnsTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
         }
         private void spellDmgTxt_TextChanged(object sender, EventArgs e)
         {
-            getIDS();
+            getImgData();
+        }
+        #endregion
+        #region powder
+        private void powder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
+            {
+                if (powder.Text != "None") { P.Text = powder.Text; P.Visible = true; } else { powder.Text = ""; P.Visible = false; }
+            }
+            else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
+            {
+                if (powder.Text != "None") { P.Text = powder.Text; P.Visible = true; } else { powder.Text = ""; P.Visible = false; }
+            }
+            if (!mccolors)
+            {
+                if (P.Text == "Sharpness I" || P.Text == "Thorns I") { P.ForeColor = System.Drawing.Color.LightGreen; }
+                else if (P.Text == "Sharpness II" || P.Text == "Thorns II") { P.ForeColor = System.Drawing.Color.Green; }
+                else if (P.Text == "Fire Aspect I" || P.Text == "Blast Protection I") { P.ForeColor = System.Drawing.Color.Red; }
+                else if (P.Text == "Fire Aspect II" || P.Text == "Blast Protection II") { P.ForeColor = System.Drawing.Color.DarkRed; }
+                else if (P.Text == "Knockback I" || P.Text == "Feather Falling I") { P.ForeColor = System.Drawing.Color.LightBlue; }
+                else if (P.Text == "Knockback II" || P.Text == "Feather Falling II") { P.ForeColor = System.Drawing.Color.Blue; }
+            }
+            else
+            {
+                P.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+        private void powder_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sheetName == "Spears" || sheetName == "Wands" || sheetName == "Bows" || sheetName == "Daggers")
+            {
+                if (powder_2.Text != "None") { P_2.Text = powder_2.Text; P_2.Visible = true; } else { powder_2.Text = ""; P_2.Visible = false; }
+            }
+            else if (sheetName == "ArmourLeather" || sheetName == "ArmourGold" || sheetName == "ArmourChain" || sheetName == "ArmourIron" || sheetName == "ArmourDiamond" || sheetName == "ArmourSpecial" || sheetName == "ArmourQuest")
+            {
+                if (powder_2.Text != "None") { P_2.Text = powder_2.Text; P_2.Visible = true; } else { powder_2.Text = ""; P_2.Visible = false; }
+            }
+            if (!mccolors)
+            {
+                if (P_2.Text == "Sharpness I" || P_2.Text == "Thorns I") { P_2.ForeColor = System.Drawing.Color.LightGreen; }
+                else if (P_2.Text == "Sharpness II" || P_2.Text == "Thorns II") { P_2.ForeColor = System.Drawing.Color.Green; }
+                else if (P_2.Text == "Fire Aspect I" || P_2.Text == "Blast P_2rotection I") { P_2.ForeColor = System.Drawing.Color.Red; }
+                else if (P_2.Text == "Fire Aspect II" || P_2.Text == "Blast P_2rotection II") { P_2.ForeColor = System.Drawing.Color.DarkRed; }
+                else if (P_2.Text == "Knockback I" || P_2.Text == "Feather Falling I") { P_2.ForeColor = System.Drawing.Color.LightBlue; }
+                else if (P_2.Text == "Knockback II" || P_2.Text == "Feather Falling II") { P_2.ForeColor = System.Drawing.Color.Blue; }
+            }
+            else
+            {
+                P_2.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+        #endregion
+        #region imgSelect
+        private void imgSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (imgSelect.SelectedItem.ToString() == "First") { imgSelected = 1; }
+            if (imgSelect.SelectedItem.ToString() == "Second") { imgSelected = 2; }
+            else { imgSelected = 1; }
         }
         #endregion
     }
